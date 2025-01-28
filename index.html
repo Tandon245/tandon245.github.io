@@ -28,7 +28,11 @@
             color: #333;
         }
 
-        .skill-set ul, .languages ul {
+        .skills-section {
+            padding: 3rem 2rem;
+        }
+
+        .skills-list, .tools-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
@@ -36,15 +40,11 @@
             padding: 0;
         }
 
-        .skill-set li, .languages li {
+        .skills-list li, .tools-list li {
             background-color: #f8f8f8;
             padding: 1rem;
             text-align: center;
             border-radius: 8px;
-        }
-
-        .skills, .languages {
-            padding: 3rem 2rem;
         }
 
         .contact-info, .social-media {
@@ -61,6 +61,13 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .skills-list, .tools-list {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
@@ -88,7 +95,7 @@
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#languages">Languages</a></li>
+            <li><a href="#tools">Tools & Technologies</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#resume">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -108,28 +115,33 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skill-set">
+        <section id="skills" class="skills-section">
+            <h2 class="section-title">Programming Skills</h2>
+            <div class="skills-list">
                 <ul>
                     <li>Java</li>
-                    <li>Spring Boot</li>
+                    <li>Kotlin</li>
+                    <li>Python</li>
                     <li>SQL</li>
-                    <li>Android Development</li>
+                    <li>JavaScript</li>
                     <li>HTML & CSS</li>
-                    <li>Git & GitHub</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Languages Section -->
-        <section id="languages" class="languages">
-            <h2 class="section-title">Languages</h2>
-            <div class="language-list">
+        <!-- Tools & Technologies Section -->
+        <section id="tools" class="skills-section">
+            <h2 class="section-title">Tools & Technologies</h2>
+            <div class="tools-list">
                 <ul>
-                    <li>English (Fluent)</li>
-                    <li>Hindi (Native)</li>
-                    <li>Spanish (Basic)</li>
+                    <li>Spring Boot</li>
+                    <li>Android Studio</li>
+                    <li>IntelliJ IDEA</li>
+                    <li>Git & GitHub</li>
+                    <li>Postman</li>
+                    <li>Swagger</li>
+                    <li>Jenkins</li>
+                    <li>Docker</li>
                 </ul>
             </div>
         </section>
