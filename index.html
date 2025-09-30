@@ -1,11 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
     <title>Abhishek Tandon | Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
     <style>
         #header {
             background: url('assets/images/my_photo.jpg') no-repeat center center;
@@ -32,7 +35,8 @@
             padding: 3rem 2rem;
         }
 
-        .skills-list, .tools-list {
+        .skills-list,
+        .tools-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
@@ -40,18 +44,21 @@
             padding: 0;
         }
 
-        .skills-list li, .tools-list li {
+        .skills-list li,
+        .tools-list li {
             background-color: #f8f8f8;
             padding: 1rem;
             text-align: center;
             border-radius: 8px;
         }
 
-        .contact-info, .social-media {
+        .contact-info,
+        .social-media {
             margin-bottom: 2rem;
         }
 
-        .contact-info h3, .social-media h3 {
+        .contact-info h3,
+        .social-media h3 {
             font-size: 1.5rem;
             color: #333;
         }
@@ -65,195 +72,211 @@
 
         /* Responsive Layout */
         @media (max-width: 768px) {
-            .skills-list, .tools-list {
+
+            .skills-list,
+            .tools-list {
                 grid-template-columns: 1fr 1fr;
             }
         }
     </style>
 </head>
+
 <body class="is-preload">
 
-<div id="wrapper" class="fade-in">
+    <div id="wrapper" class="fade-in">
 
-    <!-- Intro Section -->
-    <div id="intro">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Highlighting My Projects, Skills, and Professional Journey</p>
-        <ul class="actions">
-            <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Explore</a></li>
-        </ul>
-    </div>
-
-    <!-- Header Section -->
-    <header id="header">
-        <div class="logo">Abhishek Tandon</div>
-    </header>
-
-    <!-- Navigation -->
-    <nav id="nav">
-        <ul class="links">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#tools">Tools & Technologies</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
- 
-    <!-- Main Content -->
-    <div id="main">
-
-        <!-- About Me Section -->
-        <section id="about" class="featured">
-            <header class="major">
-                <h2>About Me</h2>
-                <p>I am a Software Developer with 2 years of experience specializing in Java, Kotlin, SQL, HTML, and CSS. I have hands-on experience working with tools such as IntelliJ IDEA, Android Studio, Visual Studio Code, Postman, Swagger, Trello, GitHub, and GitLab. I am passionate about Android development and building scalable and maintainable applications.</p>
-            </header>
-            <a href="#projects" class="image main"><img src="images/profile.jpg" alt="Abhishek Tandon" /></a>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section">
-            <h2 class="section-title">Programming Skills</h2>
-            <div class="skills-list">
-                <ul>
-                    <li>Java</li>
-                    <li>Kotlin</li>
-                    <li>Python</li>
-                    <li>SQL</li>
-                    <li>JavaScript</li>
-                    <li>HTML & CSS</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Tools & Technologies Section -->
-        <section id="tools" class="skills-section">
-            <h2 class="section-title">Tools & Technologies</h2>
-            <div class="tools-list">
-                <ul>
-                    <li>Spring Boot</li>
-                    <li>Android Studio</li>
-                    <li>IntelliJ IDEA</li>
-                    <li>Git & GitHub</li>
-                    <li>Postman</li>
-                    <li>Swagger</li>
-                    <li>Jenkins</li>
-                    <li>Docker</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="posts">
-            <header class="major">
-                <h2>Projects</h2>
-            </header>
-            <div class="project-list">
-                <article>
-                    <header>
-                        <h2><a href="#">Project 1: Advanced Web Application</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic02.jpg" alt="Project 1" /></a>
-                    <p>Developed a dynamic web application using Java, Spring Boot, and MySQL. My role involved backend logic implementation and API integration, enhancing application performance by 25%.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button">Learn More</a></li>
-                    </ul>
-                </article>
-
-                <article>
-                    <header>
-                        <h2><a href="#">Project 2: Chat Application</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic03.jpg" alt="Project 2" /></a>
-                    <p>Built an Android chat application enabling users to connect and chat securely. Integrated Firebase for real-time database support and implemented secure authentication.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button">Learn More</a></li>
-                    </ul>
-                </article>
-
-                <article>
-                    <header>
-                        <h2><a href="#">Project 3: Portfolio Website</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/pic04.jpg" alt="Project 3" /></a>
-                    <p>Designed and developed this responsive portfolio website using HTML, CSS, and JavaScript to showcase my skills and projects effectively.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button">Learn More</a></li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <!-- Resume Section -->
-        <section id="resume" class="split contact">
-            <header class="major">
-                <h2>Resume</h2>
-            </header>
-            <p>You can download my detailed resume by clicking the link below:</p>
+        <!-- Intro Section -->
+        <div id="intro">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Highlighting My Projects, Skills, and Professional Journey</p>
             <ul class="actions">
-                <li><a href="assets/resume/Abhishek_Tandon_Resume.pdf" class="button">Download Resume</a></li>
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Explore</a></li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="split contact">
-            <header class="major">
-                <h2>Contact Me</h2>
-            </header>
+        <!-- Header Section -->
+        <header id="header">
+            <div class="logo">Abhishek Tandon</div>
+        </header>
 
-            <section class="contact-info">
-                <h3>Address</h3>
-                <p>Noida Sector-58, Uttar Pradesh, India</p>
+        <!-- Navigation -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#tools">Tools & Technologies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main">
+
+            <!-- About Me Section -->
+            <section id="about" class="featured">
+                <header class="major">
+                    <h2>About Me</h2>
+                    <p>I am a Software Developer with 2 years of experience specializing in Java, Kotlin, SQL, HTML, and
+                        CSS. I have hands-on experience working with tools such as IntelliJ IDEA, Android Studio, Visual
+                        Studio Code, Postman, Swagger, Trello, GitHub, and GitLab. I am passionate about Android
+                        development and building scalable and maintainable applications.</p>
+                </header>
+                <a href="#projects" class="image main"><img src="images/profile.png" alt="Abhishek Tandon" /></a>
             </section>
 
-            <section class="contact-info">
-                <h3>Phone</h3>
-                <p><a href="tel:+919782205815">+91-9782205815</a></p>
+            <!-- Skills Section -->
+            <section id="skills" class="skills-section">
+                <h2 class="section-title">Programming Skills</h2>
+                <div class="skills-list">
+                    <ul>
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>JavaScript</li>
+                        <li>HTML & CSS</li>
+                    </ul>
+                </div>
             </section>
 
-            <section class="contact-info">
-                <h3>Email</h3>
-                <p><a href="mailto:tandonabhishek245@gmail.com">tandonabhishek245@gmail.com</a></p>
+            <!-- Tools & Technologies Section -->
+            <section id="tools" class="skills-section">
+                <h2 class="section-title">Tools & Technologies</h2>
+                <div class="tools-list">
+                    <ul>
+                        <li>Spring Boot</li>
+                        <li>Android Studio</li>
+                        <li>IntelliJ IDEA</li>
+                        <li>Git & GitHub</li>
+                        <li>Postman</li>
+                        <li>Swagger</li>
+                        <li>Jenkins</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
             </section>
 
-            <section class="social-media">
-                <h3>Social Media</h3>
-                <ul class="icons alt">
-                    <li><a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/Tandon245/" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <!-- Projects Section -->
+            <section id="projects" class="posts">
+                <header class="major">
+                    <h2>Projects</h2>
+                </header>
+                <div class="project-list">
+                    <article>
+                        <header>
+                            <h2><a href="#">Project 1: Advanced Web Application</a></h2>
+                        </header>
+                        <a href="#" class="image fit"><img src="images/pic02.jpg" alt="Project 1" /></a>
+                        <p>Developed a dynamic web application using Java, Spring Boot, and MySQL. My role involved
+                            backend logic implementation and API integration, enhancing application performance by 25%.
+                        </p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button">Learn More</a></li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <header>
+                            <h2><a href="#">Project 2: Chat Application</a></h2>
+                        </header>
+                        <a href="#" class="image fit"><img src="images/pic03.jpg" alt="Project 2" /></a>
+                        <p>Built an Android chat application enabling users to connect and chat securely. Integrated
+                            Firebase for real-time database support and implemented secure authentication.</p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button">Learn More</a></li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <header>
+                            <h2><a href="#">Project 3: Portfolio Website</a></h2>
+                        </header>
+                        <a href="#" class="image fit"><img src="images/pic04.jpg" alt="Project 3" /></a>
+                        <p>Designed and developed this responsive portfolio website using HTML, CSS, and JavaScript to
+                            showcase my skills and projects effectively.</p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button">Learn More</a></li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Resume Section -->
+            <section id="resume" class="split contact">
+                <header class="major">
+                    <h2>Resume</h2>
+                </header>
+                <p>You can download my detailed resume by clicking the link below:</p>
+                <ul class="actions">
+                    <li><a href="assets/resume/Abhishek_Tandon_Resume.pdf" class="button">Download Resume</a></li>
                 </ul>
             </section>
-        </section>
 
-        <!-- Screenshots Section -->
-        <section id="screenshots" class="screenshots">
-            <h2 class="section-title">Project Screenshots</h2>
-            <div class="screenshot-gallery">
-                <img src="images/screenshot1.jpg" alt="Screenshot 1" />
-                <img src="images/screenshot2.jpg" alt="Screenshot 2" />
-                <img src="images/screenshot3.jpg" alt="Screenshot 3" />
-            </div>
-        </section>
+            <!-- Contact Section -->
+            <section id="contact" class="split contact">
+                <header class="major">
+                    <h2>Contact Me</h2>
+                </header>
 
+                <section class="contact-info">
+                    <h3>Address</h3>
+                    <p>Noida Sector-58, Uttar Pradesh, India</p>
+                </section>
+
+                <section class="contact-info">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+919782205815">+91-9782205815</a></p>
+                </section>
+
+                <section class="contact-info">
+                    <h3>Email</h3>
+                    <p><a href="mailto:tandonabhishek245@gmail.com">tandonabhishek245@gmail.com</a></p>
+                </section>
+
+                <section class="social-media">
+                    <h3>Social Media</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/"
+                                class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/Tandon245/" class="icon brands alt fa-github"><span
+                                    class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Screenshots Section -->
+            <section id="screenshots" class="screenshots">
+                <h2 class="section-title">Project Screenshots</h2>
+                <div class="screenshot-gallery">
+                    <img src="images/screenshot1.jpg" alt="Screenshot 1" />
+                    <img src="images/screenshot2.jpg" alt="Screenshot 2" />
+                    <img src="images/screenshot3.jpg" alt="Screenshot 3" />
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul>
+                <li>&copy; 2025 Abhishek Tandon</li>
+                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <ul><li>&copy; 2025 Abhishek Tandon</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-    </footer>
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
