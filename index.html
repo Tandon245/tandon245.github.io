@@ -5,223 +5,11 @@
     <title>Abhishek Tandon | Software Developer Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" /> 
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
-    <style>
-        /* General Layout Enhancements */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-
-        /* Header Section Styling */
-        #header {
-            background: url('assets/images/my_photo.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            padding: 10rem 2rem;
-            /* Increased padding for a more impactful header */
-            position: relative;
-        }
-
-        #header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            /* Dark overlay for better text readability */
-        }
-
-        #header .logo {
-            font-size: 3.5rem;
-            /* Larger, more prominent name */
-            font-weight: 700;
-            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.9);
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Section Title Styling */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            /* Darker, professional color */
-            border-bottom: 3px solid #3498db;
-            /* Professional underline */
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-
-        .section-title-wrapper {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        /* Skills and Tools Grid Layout - PROFESSIONALIZED */
-        .skills-section {
-            padding: 3rem 2rem;
-            background-color: #f4f7f6;
-            /* Light background for contrast */
-        }
-
-        .skills-list,
-        .tools-list {
-            display: flex;
-            /* Use flex for a more fluid horizontal layout */
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            /* Tighter gap */
-            list-style: none;
-            padding: 0;
-            margin-top: 2rem;
-        }
-
-        .skills-list li,
-        .tools-list li {
-            background-color: #ffffff;
-            /* White background for cleanliness */
-            color: #34495e;
-            /* Dark text */
-            padding: 0.5rem 1.5rem;
-            /* More horizontal padding */
-            text-align: center;
-            border-radius: 20px;
-            /* Pill shape for modern look */
-            border: 1px solid #dcdde1;
-            /* Subtle border */
-            font-weight: 500;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .skills-list li:hover,
-        .tools-list li:hover {
-            background-color: #3498db;
-            /* Highlight on hover */
-            color: #ffffff;
-            transform: translateY(-2px);
-            cursor: default;
-        }
-
-        /* Project Section Styling */
-        .project-list article {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 10px;
-            overflow: hidden;
-            transition: box-shadow 0.3s;
-        }
-
-        .project-list article:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-list header h2 a {
-            color: #2c3e50;
-            text-decoration: none;
-        }
-
-        /* About Me Section Styling - PROFESSIONALIZED */
-        #about.featured {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 5rem 2rem;
-        }
-
-        #about header.major {
-            max-width: 800px;
-            margin-bottom: 2rem;
-        }
-
-        #about .profile-image {
-            display: block;
-            /* Center the image container */
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            /* Make it a circle */
-            overflow: hidden;
-            margin: 0 auto 2rem;
-            border: 5px solid #3498db;
-            /* A subtle border accent */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        #about .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Ensure the image fills the circle without distortion */
-        }
-
-        /* Contact Section Styling */
-        .contact-info {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info h3 {
-            color: #3498db;
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-info p,
-        .contact-info a {
-            color: #555;
-            text-decoration: none;
-        }
-
-        .social-media .icons a {
-            color: #3498db;
-        }
-
-        /* Responsive Layout Adjustments */
-        @media (min-width: 769px) {
-            .skills-list,
-            .tools-list {
-                /* On larger screens, center the flex content */
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            /* Skills and Tools remain fluid/wrap as a horizontal-ish list */
-            .skills-list,
-            .tools-list {
-                gap: 0.5rem;
-                justify-content: flex-start;
-            }
-
-            .skills-list li,
-            .tools-list li {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            #header {
-                padding: 6rem 1rem;
-            }
-
-            #header .logo {
-                font-size: 2.5rem;
-            }
-
-            .project-list {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
+    </head>
 
 <body class="is-preload">
 
@@ -237,8 +25,7 @@
 
         <header id="header">
             <div class="logo">Abhishek Tandon</div>
-            <p style="position: relative; z-index: 10; font-size: 1.5rem; font-weight: 400; margin-top: 1rem;">Software
-                Developer | Full Stack & Android Enthusiast</p>
+            <p class="header-subtitle">Software Developer | Full Stack & Android Enthusiast</p>
         </header>
 
         <nav id="nav">
@@ -305,18 +92,18 @@
                 </ul>
             </section>
 
-           <section id="projects" class="posts">
+            <section id="projects" class="posts">
                 <header class="major">
                     <h2 class="section-title">Key Projects</h2>
                 </header>
-                <div class="project-list" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;">
+                <div class="project-list">
                     
-                        <article style="flex: 1 1 45%; max-width: 400px; margin-bottom: 0;">
+                    <article class="special fade-in-item">
                         <header>
                             <span class="date">Mobile Development | Kotlin, Third-Party SDK</span>
                             <h2><a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank">Brio | بريو Android Application</a></h2>
                         </header>
-                        <a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank" class="image fit"><img src="images/pic02.jpg" alt="Brio Android App Screenshot" /></a>
+                        <a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank" class="image fit"><img src="images/pic01.jpg" alt="Brio Android App Screenshot" /></a>
                         <p>Brio App seamlessly tracks and monitors fitness and health metrics through its smart devices. I developed the native Android application using <b>Kotlin</b> focusing on integrating <b>third-party SDKs</b> for smart device connectivity and real-time data monitoring. The app provides smart insights for a healthier user experience.
                         </p>
                         <ul class="actions special">
@@ -324,7 +111,7 @@
                         </ul>
                     </article>
                     
-                        <article style="flex: 1 1 45%; max-width: 400px; margin-bottom: 0;">
+                    <article class="special fade-in-item">
                         <header>
                             <span class="date">Mobile Development | Android, Personalized Services</span>
                             <h2><a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank">Selective Matchmaker - Matrimonial App</a> </h2>
@@ -335,7 +122,8 @@
                             <li><a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank" class="button">View on Play Store</a></li>
                         </ul>
                     </article>
-                </div>
+
+                    </div>
             </section>
 
             <section id="resume" class="split contact">
@@ -359,15 +147,15 @@
                         <p>Noida Sector-58, Uttar Pradesh, India</p>
                     </section>
 
-                    <section class="contact-info">
-                        <h3>Phone</h3>
-                        <p><a href="tel:+919782205815" style="color: #3498db; font-weight: 500;">+91-9782205815</a></p>
-                    </section>
+                        <section class="contact-info">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919782205815" class="contact-link">+91-9782205815</a></p>
+                        </section>
 
-                    <section class="contact-info">
-                        <h3>Email</h3>
-                        <p><a href="mailto:tandonabhishek245@gmail.com" style="color: #3498db; font-weight: 500;">tandonabhishek245@gmail.com</a></p>
-                    </section>
+                        <section class="contact-info">
+                            <h3>Email</h3>
+                            <p><a href="mailto:tandonabhishek245@gmail.com" class="contact-link">tandonabhishek245@gmail.com</a></p>
+                        </section>
 
                     <section class="social-media">
                         <h3>Online Presence</h3>
@@ -381,19 +169,27 @@
                 </div>
             </section>
 
-            <section id="screenshots" class="screenshots" style="padding: 4rem 2rem; background-color: #ecf0f1;">
+                <section id="screenshots" class="screenshots">
                 <div class="section-title-wrapper">
                     <h2 class="section-title">Project Gallery</h2>
                 </div>
-                <div class="screenshot-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <p>Will be uploaded soon.</p>
+                <div class="screenshot-gallery">
+                    <a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank">
+                        <img src="images/pic02.jpg" alt="Brio App Screenshot" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank">
+                        <img src="images/pic03.jpg" alt="Selective Matchmaker Screenshot" />
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="images/pic04.jpg" alt="Project Screenshot Placeholder" />
+                    </a>
                 </div>
             </section>
 
         </div>
 
         <footer id="footer">
-            <ul style="border-top: 1px solid #e0e0e0; padding-top: 1rem;">
+            <ul class="footer-top">
                 <li>&copy; 2025 Abhishek Tandon. All rights reserved.</li>
                 <li>Template: <a href="https://html5up.net">HTML5 UP</a></li>
             </ul>

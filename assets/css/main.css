@@ -14,6 +14,251 @@
     padding: 8rem 2rem;
 }
 
+/* Project-specific helpers added to replace inline styles in HTML */
+.header-subtitle {
+	position: relative;
+	z-index: 10;
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin-top: 1rem;
+	color: inherit;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profile-image img {
+	width: 220px;
+	height: 220px;
+	max-width: 45%;
+	max-height: 220px;
+	object-fit: cover;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 1.5rem auto;
+}
+
+@media (max-width: 480px) {
+	.profile-image img {
+		width: 140px;
+		height: 140px;
+		max-width: 55%;
+	}
+}
+
+.screenshots {
+	padding: 4rem 2rem;
+	background-color: #ecf0f1;
+}
+
+.footer-top {
+	border-top: 1px solid #e0e0e0;
+	padding-top: 1rem;
+}
+
+/* Contact anchor used in index.html for phone/email links */
+.contact-link {
+	color: #3498db;
+	font-weight: 500;
+}
+
+/* Screenshot gallery grid moved from inline styles */
+.screenshot-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1.5rem;
+}
+
+/* Make project list presentational but accessible */
+.project-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 1.5rem;
+}
+.project-list > li {
+	margin: 0;
+	padding: 0;
+}
+
+/* Center main section titles and content */
+.section-title-wrapper {
+	text-align: center;
+}
+
+.section-title {
+	display: inline-block;
+	margin: 0 0 1rem 0;
+}
+
+/* Make lists and key sections centered and visually tidy */
+#skills .skills-list,
+#tools .tools-list {
+	display: flex;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 0;
+	margin: 0 0 2rem 0;
+}
+
+#skills .skills-list li,
+#tools .tools-list li {
+	background: #ffffff;
+	color: #1e252d;
+	padding: 0.65rem 1rem;
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.06);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+	min-width: auto;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#skills .skills-list li:hover, #tools .tools-list li:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+/* Section separation and tighter header-to-content spacing */
+section.posts, section.featured, section.skills-section, section.split {
+	padding-top: 2rem;
+	padding-bottom: 2.5rem;
+	border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Reduce space between section header and its first child */
+.posts .major, .featured .major, .skills-section .section-title-wrapper {
+	margin-bottom: 0.5rem;
+}
+
+/* Ensure project list sits directly beneath the section header */
+.posts .project-list {
+	margin-top: 0.5rem;
+}
+
+/* Improve spacing inside project cards */
+.project-list article.special {
+	padding: 1rem 1rem 1.25rem 1rem;
+}
+
+/* Center resume button */
+#resume .actions {
+	display: flex;
+	justify-content: center;
+}
+
+/* Project list: horizontal on wide screens, responsive stack on small */
+.project-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.project-list > li {
+	flex: 0 1 320px;
+	max-width: 420px;
+	list-style: none;
+}
+
+.project-list article.special {
+	background: #ffffff;
+	color: #212931;
+	padding: 1.25rem;
+	border-radius: 10px;
+	box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+	transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.project-list article.special:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.project-list .image.fit img {
+	border-radius: 6px;
+	max-height: 220px;
+	object-fit: cover;
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.project-list > li { flex: 0 1 calc(33.333% - 2rem); }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.project-list > li { flex: 0 1 calc(50% - 2rem); }
+}
+
+@media (max-width: 767px) {
+	.project-list { flex-direction: column; }
+	.project-list > li { flex: 1 1 100%; }
+}
+
+/* Screenshot gallery center */
+.screenshot-gallery { justify-content: center; align-items: center; }
+
+/* Thumbnail grid and light styling for project gallery */
+.screenshot-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1rem;
+	align-items: start;
+}
+
+/* Contain screenshots to the centered content width and prevent bleed */
+#screenshots {
+	box-sizing: border-box;
+	max-width: 1100px;
+	margin: 0 auto 4.5rem auto; /* increased bottom margin to add spacing before footer */
+	padding: 0 1rem;
+	overflow: hidden; /* ensure nothing bleeds outside */
+}
+
+.screenshot-gallery a {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 6px;
+}
+
+.screenshot-gallery img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 420px;
+	object-fit: cover;
+}
+
+/* Footer spacing: give the top of footer a little breathing room */
+.footer-top {
+	padding-top: 1.5rem;
+	margin-top: 1rem;
+}
+
+/* Reduce gap between Project Gallery title and thumbnails */
+#screenshots .section-title-wrapper {
+	margin-bottom: 0.5rem; /* reduce default spacing */
+}
+
+#screenshots .section-title {
+	margin-bottom: 0; /* ensure title doesn't add extra gap */
+}
+
+#screenshots .screenshot-gallery {
+	margin-top: 0; /* remove any top margin so gallery sits flush */
+}
+
+/* Project card full-width stacked layout removed - restored to template defaults */
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -2698,7 +2943,6 @@ input, select, textarea {
 
 		ul.actions li {
 			padding: 0 0 0 1rem;
-			vertical-align: middle;
 		}
 
 		ul.actions.special {
@@ -2816,7 +3060,6 @@ input, select, textarea {
 		ul.icons li {
 			display: inline-block;
 			padding: 0 0.5rem 0 0;
-			vertical-align: middle;
 		}
 
 			ul.icons li:last-child {
@@ -4628,7 +4871,7 @@ input, select, textarea {
 			right: 0;
 			text-align: right;
 			top: 0;
-			vertical-align: middle;
+			/* vertical-align removed: element is positioned absolutely */
 			width: 7rem;
 		}
 
