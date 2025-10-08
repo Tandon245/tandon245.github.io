@@ -185,9 +185,10 @@ section.posts, section.featured, section.skills-section, section.split {
 
 .project-list .image.fit img {
 	border-radius: 6px;
-	max-height: 220px;
-	object-fit: cover;
 	width: 100%;
+	height: auto; /* allow natural height */
+	max-height: none; /* remove cropping cap */
+	object-fit: contain; /* show full image without cropping */
 }
 
 @media (min-width: 1024px) {
@@ -2910,8 +2911,9 @@ input, select, textarea {
 
 		}
 
+	/* Allow full images to be visible in project cards; keep thumbnails handled separately */
 	a.image {
-		overflow: hidden;
+		overflow: visible;
 	}
 
 		a.image img {
