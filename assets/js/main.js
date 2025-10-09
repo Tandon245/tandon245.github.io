@@ -106,6 +106,42 @@
 
 				});
 
+				// Make nav links active on click (desktop & mobile).
+				$body.on('click', '#nav a', function(e) {
+
+					// Only handle same-page nav (anchors) or internal links; still mark active for external as well.
+					var $a = $(this), $li = $a.parent('li');
+
+					// Remove active from other items.
+					$('#nav .links li').removeClass('active');
+					$li.addClass('active');
+
+					// If navPanel is visible (mobile), hide it after click so it behaves like a menu.
+					if ($body.hasClass('is-navPanel-visible'))
+						$navPanel.panel.hide();
+
+				});
+
+				// Highlight Home when the top intro section is visible
+				var $introSection = $('#intro');
+				if ($introSection.length) {
+					$introSection.scrollex({
+						mode: 'top',
+						top: '5vh',
+						bottom: '-5vh',
+						enter: function() {
+							// Clear others then set Home (first nav item) active.
+							$('#nav .links li').removeClass('active');
+							// Prefer an explicit link to index.html or #intro, fall back to first li
+							var $homeLink = $('#nav .links a[href="index.html"], #nav .links a[href="#intro"]').first();
+							if ($homeLink.length)
+								$homeLink.parent('li').addClass('active');
+							else
+								$('#nav .links li').first().addClass('active');
+						}
+					});
+				}
+
 			// Hack: Disable transitions on WP.
 				if (browser.os == 'wp'
 				&&	browser.osVersion < 10)
@@ -170,5 +206,6 @@
 			});
 
 		}
+
 
 })(jQuery);
