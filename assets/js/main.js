@@ -1,211 +1,174 @@
-/*
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+// main.js - interactions: transparent -> solid header, smooth scroll, reveal using IntersectionObserver + fallback
+(function () {
+  "use strict";
 
-(function($) {
+  // small helpers
+  var $ = window.jQuery || null;
 
-	var	$window = $(window),
-		$body = $('body'),
-		$wrapper = $('#wrapper'),
-		$header = $('#header'),
-		$nav = $('#nav'),
-		$main = $('#main'),
-		$navPanelToggle, $navPanel, $navPanelInner;
+  // DOM elements
+  var header = document.getElementById("site-header");
+  var hero = document.getElementById("hero");
+  var navList = document.querySelector(".nav-list");
+  var navToggle = document.getElementById("navToggle");
+  var navLinks = document.querySelectorAll('.nav-list a[data-scroll]');
+  var reveals = document.querySelectorAll(".reveal");
 
-	// Breakpoints.
-		breakpoints({
-			default:   ['1681px',   null       ],
-			xlarge:    ['1281px',   '1680px'   ],
-			large:     ['981px',    '1280px'   ],
-			medium:    ['737px',    '980px'    ],
-			small:     ['481px',    '736px'    ],
-			xsmall:    ['361px',    '480px'    ],
-			xxsmall:   [null,       '360px'    ]
-		});
+  // 1) Header: transparent on top, becomes solid after scrolling past hero threshold
+  function updateHeaderOnScroll() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    var heroBottom = (hero && hero.offsetTop + hero.offsetHeight) || 400;
+    // when scrolled beyond 70% of hero height -> solid header
+    if (scrollY > hero.offsetTop + (hero.offsetHeight * 0.65)) {
+      header.classList.remove("header--transparent");
+      header.classList.add("header--solid");
+    } else {
+      header.classList.add("header--transparent");
+      header.classList.remove("header--solid");
+    }
+  }
 
-	// Parallax behavior removed for performance and simplicity.
+  // 2) Smooth scroll for anchor links
+  function smoothScrollHandler(e) {
+    var href = this.getAttribute("href");
+    if (!href || href.indexOf("#") !== 0) return;
+    var target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    var headerHeight = header.offsetHeight || 64;
+    var top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+    window.scrollTo({ top: top, behavior: "smooth" });
+    // hide mobile nav if open
+    if (navList.classList.contains("show")) navList.classList.remove("show");
+  }
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+  // 3) Mobile nav toggle
+  if (navToggle) {
+    navToggle.addEventListener("click", function () {
+      navList.classList.toggle("show");
+    });
+  }
 
-	// Scrolly.
-		$('.scrolly').scrolly();
+  // bind smooth scroll (all matching anchors)
+  navLinks.forEach(function (a) {
+    a.addEventListener("click", smoothScrollHandler);
+  });
+  // also hero CTA and hints
+  var scrollAnchors = document.querySelectorAll('a[data-scroll]');
+  scrollAnchors.forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      // avoid double-binding anchors already in nav
+      if (this.closest(".nav-list")) return;
+      smoothScrollHandler.call(this, e);
+    });
+  });
 
-	// Background parallax removed; keep wrapper as-is.
+  // 4) Reveal elements on scroll using IntersectionObserver (fast & efficient)
+  function initReveal() {
+    if ("IntersectionObserver" in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
 
-	// Nav Panel.
+      reveals.forEach(function (el) {
+        obs.observe(el);
+      });
+    } else {
+      // fallback: simple throttled scroll check
+      var throttleTimeout = null;
+      function revealOnScrollFallback() {
+        if (throttleTimeout) return;
+        throttleTimeout = setTimeout(function () {
+          throttleTimeout = null;
+          var windowBottom = window.scrollY + window.innerHeight;
+          reveals.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            var elTop = rect.top + window.scrollY;
+            if (windowBottom > elTop + 60) {
+              el.classList.add("is-visible");
+            }
+          });
+        }, 150);
+      }
+      revealOnScrollFallback();
+      window.addEventListener("scroll", revealOnScrollFallback);
+      window.addEventListener("resize", revealOnScrollFallback);
+    }
+  }
 
-		// Toggle.
-			$navPanelToggle = $(
-				'<a href="#navPanel" id="navPanelToggle">Menu</a>'
-			)
-				.appendTo($wrapper);
+  // 5) Active nav link on scroll
+  function updateActiveNav() {
+    var fromTop = window.scrollY + (header.offsetHeight || 70) + 20;
+    var navItems = document.querySelectorAll(".nav-list .nav-item");
+    var found = false;
 
-			// Change toggle styling once we've scrolled past the header.
-				$header.scrollex({
-					bottom: '5vh',
-					enter: function() {
-						$navPanelToggle.removeClass('alt');
-					},
-					leave: function() {
-						$navPanelToggle.addClass('alt');
-					}
-				});
+    document.querySelectorAll("main section[id]").forEach(function (section) {
+      var top = section.offsetTop;
+      var bottom = top + section.offsetHeight;
+      if (fromTop >= top && fromTop < bottom) {
+        var id = section.getAttribute("id");
+        // remove current active
+        navItems.forEach(function (li) { li.classList.remove("active"); });
+        var link = document.querySelector('.nav-list a[href="#' + id + '"]');
+        if (link && link.parentElement) {
+          link.parentElement.classList.add("active");
+          found = true;
+        }
+      }
+    });
+    if (!found) {
+      // fallback: highlight home if near top
+      if (window.scrollY < 220) {
+        document.querySelectorAll(".nav-list .nav-item").forEach(function (li) { li.classList.remove("active"); });
+        var first = document.querySelector(".nav-list .nav-item");
+        if (first) first.classList.add("active");
+      }
+    }
+  }
 
-		// Panel.
-			$navPanel = $(
-				'<div id="navPanel">' +
-					'<nav>' +
-					'</nav>' +
-					'<a href="#navPanel" class="close"></a>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-navPanel-visible'
-				});
+  // 6) Throttle helper
+  function throttle(fn, wait) {
+    var last = 0;
+    return function () {
+      var now = Date.now();
+      if (now - last >= wait) {
+        last = now;
+        fn.apply(this, arguments);
+      }
+    };
+  }
 
-			// Get inner.
-				$navPanelInner = $navPanel.children('nav');
+  // Initialization
+  function init() {
+    // run initial header state
+    updateHeaderOnScroll();
+    // event listeners
+    window.addEventListener("scroll", throttle(function () {
+      updateHeaderOnScroll();
+      updateActiveNav();
+    }, 120));
+    window.addEventListener("resize", throttle(updateHeaderOnScroll, 180));
+    // reveals
+    initReveal();
 
-			// Move nav content on breakpoint change.
-				var $navContent = $nav.children();
+    // set up initial small stagger for hero & first reveals
+    setTimeout(function () {
+      document.querySelectorAll(".hero-inner, .hero-cta").forEach(function (el, i) {
+        el.style.transition = "opacity .6s ease, transform .6s ease";
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      });
+    }, 120);
+  }
 
-				breakpoints.on('>medium', function() {
-
-					// NavPanel -> Nav.
-						$navContent.appendTo($nav);
-
-					// Flip icon classes.
-						$nav.find('.icons, .icon')
-							.removeClass('alt');
-
-				});
-
-				breakpoints.on('<=medium', function() {
-
-					// Nav -> NavPanel.
-						$navContent.appendTo($navPanelInner);
-
-					// Flip icon classes.
-						$navPanelInner.find('.icons, .icon')
-							.addClass('alt');
-
-				});
-
-				// Make nav links active on click (desktop & mobile).
-				$body.on('click', '#nav a', function(e) {
-
-					// Only handle same-page nav (anchors) or internal links; still mark active for external as well.
-					var $a = $(this), $li = $a.parent('li');
-
-					// Remove active from other items.
-					$('#nav .links li').removeClass('active');
-					$li.addClass('active');
-
-					// If navPanel is visible (mobile), hide it after click so it behaves like a menu.
-					if ($body.hasClass('is-navPanel-visible'))
-						$navPanel.panel.hide();
-
-				});
-
-				// Highlight Home when the top intro section is visible
-				var $introSection = $('#intro');
-				if ($introSection.length) {
-					$introSection.scrollex({
-						mode: 'top',
-						top: '5vh',
-						bottom: '-5vh',
-						enter: function() {
-							// Clear others then set Home (first nav item) active.
-							$('#nav .links li').removeClass('active');
-							// Prefer an explicit link to index.html or #intro, fall back to first li
-							var $homeLink = $('#nav .links a[href="index.html"], #nav .links a[href="#intro"]').first();
-							if ($homeLink.length)
-								$homeLink.parent('li').addClass('active');
-							else
-								$('#nav .links li').first().addClass('active');
-						}
-					});
-				}
-
-			// Hack: Disable transitions on WP.
-				if (browser.os == 'wp'
-				&&	browser.osVersion < 10)
-					$navPanel
-						.css('transition', 'none');
-
-	// Intro.
-		var $intro = $('#intro');
-
-		if ($intro.length > 0) {
-
-			// Hack: Fix flex min-height on IE.
-				if (browser.name == 'ie') {
-					$window.on('resize.ie-intro-fix', function() {
-
-						var h = $intro.height();
-
-						if (h > $window.height())
-							$intro.css('height', 'auto');
-						else
-							$intro.css('height', h);
-
-					}).trigger('resize.ie-intro-fix');
-				}
-
-			// Hide intro on scroll (> small).
-				breakpoints.on('>small', function() {
-
-					$main.unscrollex();
-
-					$main.scrollex({
-						mode: 'bottom',
-						top: '25vh',
-						bottom: '-50vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
-					});
-
-				});
-
-			// Hide intro on scroll (<= small).
-				breakpoints.on('<=small', function() {
-
-					$main.unscrollex();
-
-					$main.scrollex({
-						mode: 'middle',
-						top: '15vh',
-						bottom: '-15vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
-					});
-
-			});
-
-		}
-
-
-})(jQuery);
+  // Wait for DOM ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

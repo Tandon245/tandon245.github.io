@@ -1,209 +1,175 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Abhishek Tandon | Software Developer Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" /> 
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
-    </head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abhishek Tandon | Software Developer</title>
 
-<body class="is-preload">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Source+Sans+Pro:wght@700;900&display=swap" rel="stylesheet">
 
-    <div id="wrapper" class="fade-in">
+  <!-- Font Awesome (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <div id="intro">
-            <h1>Abhishek Tandon: Software Developer</h1>
-            <p>2+ Years Experience in Java, Kotlin, and Scalable Application Development.</p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">View Portfolio</a></li>
-            </ul>
-        </div>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
 
-        <header id="header">
-            <div class="logo">Abhishek Tandon</div>
-            <p class="header-subtitle">Software Developer | Full Stack & Android Enthusiast</p>
-        </header>
+  <div id="site">
 
-        <nav id="nav">
-            <ul class="links">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- NAV (transparent on top, becomes dark on scroll) -->
+    <header id="site-header" class="header--transparent">
+      <div class="header-inner">
+        <div class="brand">Abhishek Tandon</div>
+
+        <button id="navToggle" aria-label="Toggle navigation" class="nav-toggle">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <nav id="site-nav" class="nav">
+          <ul class="nav-list">
+            <li class="nav-item active"><a href="#hero" data-scroll>Home</a></li>
+            <li class="nav-item"><a href="#about" data-scroll>About</a></li>
+            <li class="nav-item"><a href="#skills" data-scroll>Skills</a></li>
+            <li class="nav-item"><a href="#projects" data-scroll>Projects</a></li>
+            <li class="nav-item"><a href="#resume" data-scroll>Resume</a></li>
+            <li class="nav-item"><a href="#contact" data-scroll>Contact</a></li>
+          </ul>
         </nav>
+      </div>
+    </header>
 
-        <div id="main">
+    <!-- HERO (full viewport) -->
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">Abhishek Tandon</h1>
+        <p class="hero-sub">Software Developer • Java • Kotlin • Android • Full Stack</p>
+        <a class="hero-cta" href="#about" data-scroll>View Portfolio</a>
+      </div>
 
-            <section id="about" class="featured">
-                <div class="profile-image">
-                    <img src="images/profile.png" alt="Abhishek Tandon" />
-                </div>
-                <header class="major">
-                    <div class="section-title-wrapper">
-                        <h2 class="section-title">A Bit About Me</h2>
-                    </div>
-                    <p>
-                        I am a <b>Software Developer</b> with <b> years of professional experience</b> specializing in
-                        building robust and scalable applications. My core expertise lies in <b>Java and Kotlin</b>, with a
-                        strong foundation in <b>SQL, HTML, and CSS</b>. I am deeply passionate about <b>Android
-                        Development</b> and backend system architecture, focusing on delivering high-performance,
-                        maintainable, and user-centric solutions. I thrive in dynamic environments and am dedicated to
-                        continuous learning and utilizing cutting-edge technologies.
-                    </p>
-                </header>
-                <ul class="actions">
-                    <li><a href="#projects" class="button primary">View Projects</a></li>
-                </ul>
-            </section>
+      <!-- subtle scroll hint -->
+      <a class="scroll-hint" href="#about" data-scroll aria-hidden="true">
+        <span class="fa fa-chevron-down"></span>
+      </a>
+    </section>
 
-            <section id="skills" class="skills-section">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Core Programming Skills</h2>
-                </div>
-                <ul class="skills-list">
-                    <li>Java</li>
-                    <li>Kotlin</li>
-                    <li>SQL (MySQL/PostgreSQL)</li>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML & CSS</li>
-                </ul>
-            </section>
+    <!-- MAIN -->
+    <main id="main">
 
-            <section id="tools" class="skills-section">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Tools & Frameworks</h2>
-                </div>
-                <ul class="tools-list">
-                    <li>Spring Boot</li>
-                    <li>Android Studio</li>
-                    <li>IntelliJ IDEA</li>
-                    <li>Git & GitHub/GitLab & BitBucke</li>
-                    <li>Postman / Swagger</li>
-                    <li>Visual Studio Code</li>
-                    <li>Trello</li>
-                </ul>
-            </section>
+      <!-- ABOUT -->
+      <section id="about" class="panel reveal">
+        <div class="panel-inner about-inner">
+          <div class="profile">
+            <img src="images/profile.png" alt="Abhishek Tandon" />
+          </div>
+          <div class="about-content">
+            <h2 class="section-title">A Bit About Me</h2>
+            <p>
+              I am a <strong>Software Developer</strong> focused on building robust, scalable applications using
+              <strong>Java</strong>, <strong>Kotlin</strong> and <strong>Spring Boot</strong>. I enjoy building
+              Android experiences and backend systems with a focus on performance and clean architecture.
+            </p>
+            <a class="button primary" href="#projects" data-scroll>View Projects</a>
+          </div>
+        </div>
+      </section>
 
-            <section id="projects" class="posts">
-                <header class="major">
-                    <h2 class="section-title">Key Projects</h2>
-                </header>
-                <div class="project-list">
-                    
-                    <article class="special fade-in-item">
-                        <header>
-                            <span class="date">Mobile Development | Kotlin, Third-Party SDK</span>
-                            <h2><a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank">Brio | بريو Android Application</a></h2>
-                        </header>
-                        <a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank" class="image fit"><img src="images/brio.webp" alt="Brio Android App Screenshot" /></a>
-                        <p>Brio App seamlessly tracks and monitors fitness and health metrics through its smart devices. I developed the native Android application using <b>Kotlin</b> focusing on integrating <b>third-party SDKs</b> for smart device connectivity and real-time data monitoring. The app provides smart insights for a healthier user experience.
-                        </p>
-                        <ul class="actions special">
-                            <li><a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank" class="button">View on Play Store</a></li>
-                        </ul>
-                    </article>
-                    
-                    <article class="special fade-in-item">
-                        <header>
-                            <span class="date">Mobile Development | Android, Personalized Services</span>
-                            <h2><a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank">Selective Matchmaker - Matrimonial App</a> </h2>
-                        </header>
-                        <a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank" class="image fit"><img src="images/matchmaker.webp" alt="Selective Matchmaker App Screenshot" /></a>
-                        <p>Engineered the native Android application for <b>Selective Matchmaker</b>. This matrimonial platform offers personalized services and dedicated matchmakers. I focused on delivering a <b>user-friendly interface (UI/UX)</b> and implementing complex filtering logic to provide precise and high-quality matches.</p>
-                        <ul class="actions special">
-                            <li><a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank" class="button">View on Play Store</a></li>
-                        </ul>
-                    </article>
+      <!-- SKILLS -->
+      <section id="skills" class="panel reveal">
+        <h2 class="section-title">Core Programming Skills</h2>
+        <ul class="skill-tags">
+          <li>Java</li>
+          <li>Kotlin</li>
+          <li>SQL</li>
+          <li>HTML & CSS</li>
+          <li>JavaScript (Basic)</li>
+          <li>XML</li>
+        </ul>
+      </section>
 
-                    </div>
-            </section>
+      <!-- PROJECTS (full-width gallery block with contained images) -->
+      <section id="projects" class="panel reveal panel--wide">
+        <h2 class="section-title">Key Projects</h2>
 
-            <section id="resume" class="split contact">
-                <header class="major">
-                    <h2 class="section-title">Professional Resume</h2>
-                </header>
-                <p>View my comprehensive professional background, work experience, and educational qualifications.</p>
-                <ul class="actions">
-                    <li><a href="assets/resume/Abhishek_Tandon_Resume.pdf" class="button primary large">Download Resume (PDF)</a></li>
-                </ul>
-            </section>
+        <div class="projects-grid">
+          <article class="project-card">
+            <figure class="project-media" aria-hidden="false">
+              <img src="images/brio.webp" alt="Brio — Android App screenshot" loading="lazy" />
+            </figure>
+            <div class="project-body">
+              <span class="meta">Mobile Development | Kotlin</span>
+              <h3>Brio — Android Application</h3>
+              <p>Native Android fitness tracking app with advanced device SDK integration, real-time monitoring and optimized BLE communication.</p>
+              <a class="button outline" href="https://play.google.com/store/apps/details?id=sa.com.brio.android" target="_blank" rel="noopener">View on Play Store</a>
+            </div>
+          </article>
 
-            <section id="contact" class="split contact">
-                <header class="major">
-                    <h2 class="section-title">Get In Touch</h2>
-                </header>
+          <article class="project-card">
+            <figure class="project-media">
+              <img src="images/matchmaker.webp" alt="Selective Matchmaker screenshot" loading="lazy" />
+            </figure>
+            <div class="project-body">
+              <span class="meta">Mobile Development | Android</span>
+              <h3>Selective Matchmaker</h3>
+              <p>Matrimony platform with custom filtering, clean UI/UX and robust user management built natively for Android.</p>
+              <a class="button outline" href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android" target="_blank" rel="noopener">View on Play Store</a>
+            </div>
+          </article>
+        </div>
+      </section>
 
-                <div class="contact-details">
-                    <section class="contact-info">
-                        <h3>Location</h3>
-                        <p>Noida, Uttar Pradesh, India</p>
-                    </section>
+      <!-- RESUME -->
+      <section id="resume" class="panel reveal">
+        <h2 class="section-title">Professional Resume</h2>
+        <p>Download my resume for detailed experience, education and project summaries.</p>
+        <a class="button primary" href="assets/resume/Er_Abhishek_Tandon_Resume.pdf" target="_blank">Download Resume (PDF)</a>
+      </section>
 
-                        <section class="contact-info">
-                            <h3>Phone</h3>
-                            <p><a href="tel:+919782205815" class="contact-link">+91-9782205815</a></p>
-                        </section>
+      <!-- CONTACT -->
+      <section id="contact" class="panel reveal">
+        <h2 class="section-title">Get In Touch</h2>
 
-                        <section class="contact-info">
-                            <h3>Email</h3>
-                            <p><a href="mailto:tandonabhishek245@gmail.com" class="contact-link">tandonabhishek245@gmail.com</a></p>
-                        </section>
+        <div class="contact-grid">
+          <div>
+            <h4>Location</h4>
+            <p>Noida, Uttar Pradesh, India</p>
+          </div>
 
-                    <section class="social-media">
-                        <h3>Online Presence</h3>
-                        <ul class="icons alt">
-                            <li><a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                            <li><a href="https://github.com/Tandon245/" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                            <li><a href="https://www.hackerrank.com/profile/tandonabhishek21" target="_blank" class="icon brands alt fa-hackerrank"><span class="label">HackerRank</span></a></li>
-                            <li><a href="https://leetcode.com/u/AbhiTandon2617/" target="_blank" class="icon alt fa-code"><span class="label">LeetCode</span></a></li>
-                        </ul>
-                    </section>
-                </div>
-            </section>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+919782205815">+91-9782205815</a></p>
+          </div>
 
-                <section id="screenshots" class="screenshots">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Project Gallery</h2>
-                </div>
-                <div class="screenshot-gallery">
-                    <a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank">
-                        <img src="images/pic02.jpg" alt="Brio App Screenshot" />
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank">
-                        <img src="images/pic03.jpg" alt="Selective Matchmaker Screenshot" />
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="images/pic04.jpg" alt="Project Screenshot Placeholder" />
-                    </a>
-                </div>
-            </section>
-
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:tandonabhishek245@gmail.com">tandonabhishek245@gmail.com</a></p>
+          </div>
         </div>
 
-        <footer id="footer">
-            <ul class="footer-top">
-                <li>&copy; 2025 Abhishek Tandon. All rights reserved.</li>
-                <li>Template: <a href="https://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </footer>
-    </div>
+        <div class="social-row">
+          <h4>Online Presence</h4>
+          <ul class="social-list">
+            <li><a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/" target="_blank" rel="noopener" class="social"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/Tandon245" target="_blank" rel="noopener" class="social"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.hackerrank.com/profile/tandonabhishek21" target="_blank" rel="noopener" class="social"><i class="fab fa-hackerrank"></i></a></li>
+            <li><a href="https://leetcode.com/u/AbhiTandon2617/" target="_blank" rel="noopener" class="social"><i class="fa fa-code"></i></a></li>
+          </ul>
+        </div>
+      </section>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    </main>
 
+    <footer id="site-footer">
+      <small>&copy; 2025 Abhishek Tandon. All rights reserved.</small>
+    </footer>
+
+  </div>
+
+  <!-- jQuery (used for small helpers and backward compatibility) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>
