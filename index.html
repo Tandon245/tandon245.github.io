@@ -1,175 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abhishek Tandon | Software Developer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Abhishek Tandon | Software Developer</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Source+Sans+Pro:wght@700;900&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Source+Sans+Pro:wght@700;900&display=swap"
+        rel="stylesheet">
 
-  <!-- Font Awesome (CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        xintegrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
+
 <body>
 
-  <div id="site">
+    <div id="site">
 
-    <!-- NAV (transparent on top, becomes dark on scroll) -->
-    <header id="site-header" class="header--transparent">
-      <div class="header-inner">
-        <div class="brand">Abhishek Tandon</div>
+        <!-- HEADER -->
+        <header id="site-header" class="header--transparent">
+            <div class="header-inner">
+                <div class="brand">Abhishek Tandon</div>
 
-        <button id="navToggle" aria-label="Toggle navigation" class="nav-toggle">
-          <i class="fa fa-bars"></i>
-        </button>
+                <button id="navToggle" aria-label="Toggle navigation" class="nav-toggle">
+                    <i class="fa fa-bars"></i>
+                </button>
 
-        <nav id="site-nav" class="nav">
-          <ul class="nav-list">
-            <li class="nav-item active"><a href="#hero" data-scroll>Home</a></li>
-            <li class="nav-item"><a href="#about" data-scroll>About</a></li>
-            <li class="nav-item"><a href="#skills" data-scroll>Skills</a></li>
-            <li class="nav-item"><a href="#projects" data-scroll>Projects</a></li>
-            <li class="nav-item"><a href="#resume" data-scroll>Resume</a></li>
-            <li class="nav-item"><a href="#contact" data-scroll>Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- HERO (full viewport) -->
-    <section id="hero" class="hero">
-      <div class="hero-inner">
-        <h1 class="hero-title">Abhishek Tandon</h1>
-        <p class="hero-sub">Software Developer • Java • Kotlin • Android • Full Stack</p>
-        <a class="hero-cta" href="#about" data-scroll>View Portfolio</a>
-      </div>
-
-      <!-- subtle scroll hint -->
-      <a class="scroll-hint" href="#about" data-scroll aria-hidden="true">
-        <span class="fa fa-chevron-down"></span>
-      </a>
-    </section>
-
-    <!-- MAIN -->
-    <main id="main">
-
-      <!-- ABOUT -->
-      <section id="about" class="panel reveal">
-        <div class="panel-inner about-inner">
-          <div class="profile">
-            <img src="images/profile.png" alt="Abhishek Tandon" />
-          </div>
-          <div class="about-content">
-            <h2 class="section-title">A Bit About Me</h2>
-            <p>
-              I am a <strong>Software Developer</strong> focused on building robust, scalable applications using
-              <strong>Java</strong>, <strong>Kotlin</strong> and <strong>Spring Boot</strong>. I enjoy building
-              Android experiences and backend systems with a focus on performance and clean architecture.
-            </p>
-            <a class="button primary" href="#projects" data-scroll>View Projects</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="panel reveal">
-        <h2 class="section-title">Core Programming Skills</h2>
-        <ul class="skill-tags">
-          <li>Java</li>
-          <li>Kotlin</li>
-          <li>SQL</li>
-          <li>HTML & CSS</li>
-          <li>JavaScript (Basic)</li>
-          <li>XML</li>
-        </ul>
-      </section>
-
-      <!-- PROJECTS (full-width gallery block with contained images) -->
-      <section id="projects" class="panel reveal panel--wide">
-        <h2 class="section-title">Key Projects</h2>
-
-        <div class="projects-grid">
-          <article class="project-card">
-            <figure class="project-media" aria-hidden="false">
-              <img src="images/brio.webp" alt="Brio — Android App screenshot" loading="lazy" />
-            </figure>
-            <div class="project-body">
-              <span class="meta">Mobile Development | Kotlin</span>
-              <h3>Brio — Android Application</h3>
-              <p>Native Android fitness tracking app with advanced device SDK integration, real-time monitoring and optimized BLE communication.</p>
-              <a class="button outline" href="https://play.google.com/store/apps/details?id=sa.com.brio.android" target="_blank" rel="noopener">View on Play Store</a>
+                <nav id="site-nav" class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item active"><a href="#hero" data-scroll>Home</a></li>
+                        <li class="nav-item"><a href="#about" data-scroll>About</a></li>
+                        <li class="nav-item"><a href="#skills" data-scroll>Skills</a></li>
+                        <li class="nav-item"><a href="#projects" data-scroll>Projects</a></li>
+                        <li class="nav-item"><a href="#resume" data-scroll>Resume</a></li>
+                        <li class="nav-item"><a href="#contact" data-scroll>Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-          </article>
+        </header>
 
-          <article class="project-card">
-            <figure class="project-media">
-              <img src="images/matchmaker.webp" alt="Selective Matchmaker screenshot" loading="lazy" />
-            </figure>
-            <div class="project-body">
-              <span class="meta">Mobile Development | Android</span>
-              <h3>Selective Matchmaker</h3>
-              <p>Matrimony platform with custom filtering, clean UI/UX and robust user management built natively for Android.</p>
-              <a class="button outline" href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android" target="_blank" rel="noopener">View on Play Store</a>
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="hero-inner">
+                <h1 class="hero-title">Abhishek Tandon</h1>
+                <p class="hero-sub">Software Developer • Java • Kotlin • Android • Full Stack</p>
+                <a class="hero-cta" href="#about" data-scroll>View Portfolio</a>
             </div>
-          </article>
-        </div>
-      </section>
 
-      <!-- RESUME -->
-      <section id="resume" class="panel reveal">
-        <h2 class="section-title">Professional Resume</h2>
-        <p>Download my resume for detailed experience, education and project summaries.</p>
-        <a class="button primary" href="assets/resume/Er_Abhishek_Tandon_Resume.pdf" target="_blank">Download Resume (PDF)</a>
-      </section>
+            <a class="scroll-hint" href="#about" data-scroll aria-hidden="true">
+                <span class="fa fa-chevron-down"></span>
+            </a>
+        </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="panel reveal">
-        <h2 class="section-title">Get In Touch</h2>
+        <!-- MAIN CONTENT -->
+        <main id="main">
 
-        <div class="contact-grid">
-          <div>
-            <h4>Location</h4>
-            <p>Noida, Uttar Pradesh, India</p>
-          </div>
+            <!-- ABOUT SECTION -->
+            <section id="about" class="panel reveal">
+                <div class="panel-inner about-inner">
+                    <div class="profile">
+                        <!-- Ensure you have this image in images/profile.png -->
+                        <img src="images/profile.png" alt="Abhishek Tandon" />
+                    </div>
+                    <div class="about-content">
+                        <h2 class="section-title">A Bit About Me</h2>
+                        <p>
+                            I am a results-driven <strong>Software Developer</strong> specializing in native Android
+                            development and
+                            backend systems. With expertise in <strong>Kotlin</strong>, <strong>Java</strong>, and
+                            <strong>Spring
+                                Boot</strong>, I build scalable, high-performance applications that blend robust
+                            functionality with
+                            intuitive design.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            My experience spans <strong>fintech, health-tech, and social platforms</strong>, where I
+                            excel at
+                            crafting seamless user interfaces using <strong>Jetpack Compose</strong> and XML, while
+                            ensuring secure API
+                            integration and efficient state management.
+                        </p>
+                        <a class="button primary" href="#projects" data-scroll>View Projects</a>
+                    </div>
+                </div>
+            </section>
 
-          <div>
-            <h4>Phone</h4>
-            <p><a href="tel:+919782205815">+91-9782205815</a></p>
-          </div>
+            <!-- SKILLS SECTION -->
+            <section id="skills" class="panel reveal">
+                <h2 class="section-title">Technical Skills</h2>
 
-          <div>
-            <h4>Email</h4>
-            <p><a href="mailto:tandonabhishek245@gmail.com">tandonabhishek245@gmail.com</a></p>
-          </div>
-        </div>
+                <h3 class="skill-category-title">Languages & Frameworks</h3>
+                <ul class="skill-tags">
+                    <li>Java</li>
+                    <li>Kotlin</li>
+                    <li>Jetpack Compose</li>
+                    <li>Flutter (Basic)</li>
+                    <li>SQL</li>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript (Basic)</li>
+                    <li>Spring Boot</li>
+                    <li>Android Development</li>
+                    <li>XML</li>
+                </ul>
 
-        <div class="social-row">
-          <h4>Online Presence</h4>
-          <ul class="social-list">
-            <li><a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/" target="_blank" rel="noopener" class="social"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://github.com/Tandon245" target="_blank" rel="noopener" class="social"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.hackerrank.com/profile/tandonabhishek21" target="_blank" rel="noopener" class="social"><i class="fab fa-hackerrank"></i></a></li>
-            <li><a href="https://leetcode.com/u/AbhiTandon2617/" target="_blank" rel="noopener" class="social"><i class="fa fa-code"></i></a></li>
-          </ul>
-        </div>
-      </section>
+                <h3 class="skill-category-title">Tools & Platforms</h3>
+                <ul class="skill-tags">
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>GitLab</li>
+                    <li>Firebase</li>
+                    <li>Postman</li>
+                    <li>Swagger</li>
+                    <li>MySQL Workbench</li>
+                    <li>Azure Data Studio</li>
+                    <li>Google Play Console</li>
+                </ul>
+            </section>
 
-    </main>
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="panel reveal panel--wide">
+                <h2 class="section-title">Key Projects</h2>
 
-    <footer id="site-footer">
-      <small>&copy; 2025 Abhishek Tandon. All rights reserved.</small>
-    </footer>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <figure class="project-media" aria-hidden="false">
+                            <img src="images/brio.webp" alt="Brio Android App" loading="lazy"
+                                onerror="this.src='https://placehold.co/600x400?text=Brio+App'" />
+                        </figure>
+                        <div class="project-body">
+                            <span class="meta">Smart Fitness Tracking Application</span>
+                            <h3>Brio — Android Application</h3>
+                            <p>This project delivers a comprehensive fitness experience by integrating multiple smart
+                                health devices
+                                through a custom SDK for real-time measurement. The application supports body scale
+                                tracking, smart tape
+                                measurements, food scale syncing, and skipping-rope activity monitoring.</p>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=sa.com.brio.android" target="_blank"
+                                rel="noopener">View on Play Store</a>
+                        </div>
+                    </article>
 
-  </div>
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="images/moconnect.webp" alt="MoConnect App" loading="lazy"
+                                onerror="this.src='https://placehold.co/600x400?text=MoConnect'" />
+                        </figure>
+                        <div class="project-body">
+                            <span class="meta">Airtime & Utility Recharge Application</span>
+                            <h3>MoConnect: SIM, Airtime & More</h3>
+                            <p>This project delivers a complete Android solution for airtime top-ups, international
+                                mobile recharges,
+                                electricity bill payments, DStv subscriptions, and wallet-based transactions. Built with
+                                Kotlin with fully integrated APIs.</p>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=za.co.moconnect.android.customer&hl=en_IN"
+                                target="_blank" rel="noopener">View on Play Store</a>
+                        </div>
+                    </article>
 
-  <!-- jQuery (used for small helpers and backward compatibility) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="images/easicall.webp" alt="EasiApp" loading="lazy"
+                                onerror="this.src='https://placehold.co/600x400?text=EasiApp'" />
+                        </figure>
+                        <div class="project-body">
+                            <span class="meta">Android SIM & Recharge Application</span>
+                            <h3>EasiApp</h3>
+                            <p>EasiApp enables users to purchase SIM cards, recharge mobile numbers (local and
+                                international), and
+                                perform DTH recharges. The application includes secure wallet functionality, detailed
+                                commission
+                                reports, and quick support options.</p>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=za.co.easicall.rica&hl=en_IN"
+                                target="_blank" rel="noopener">View on Play Store</a>
+                        </div>
+                    </article>
 
-  <!-- Main JS -->
-  <script src="assets/js/main.js"></script>
+                    <!-- Project 4 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="images/matchmaker.webp" alt="Selective Matchmaker" loading="lazy"
+                                onerror="this.src='https://placehold.co/600x400?text=Matchmaker'" />
+                        </figure>
+                        <div class="project-body">
+                            <span class="meta">Mobile Development | Android</span>
+                            <h3>Selective Matchmaker</h3>
+                            <p>A native Android platform focused on high-intent matchmaking using Kotlin. The app
+                                enables users to
+                                create detailed profiles, securely authenticate, and utilize granular custom filtering
+                                to find
+                                compatible matches.</p>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android"
+                                target="_blank" rel="noopener">View on Play Store</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- RESUME SECTION -->
+            <section id="resume" class="panel reveal">
+                <h2 class="section-title">Professional Resume</h2>
+                <p>Download my resume for detailed experience, education, and project summaries.</p>
+                <a class="button primary" href="assets/resume/Er_Abhishek_Tandon_Resume.pdf" target="_blank">Download
+                    Resume
+                    (PDF)</a>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="panel reveal">
+                <h2 class="section-title">Get In Touch</h2>
+
+                <div class="contact-wrapper">
+                    <!-- Contact Info Column -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>Location</h4>
+                            <p>Noida, Uttar Pradesh, India</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+919782205815">+91-9782205815</a></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p><a href="mailto:tandonabhishek245@gmail.com">tandonabhishek245@gmail.com</a></p>
+                        </div>
+
+                        <div class="social-row">
+                            <h4>Online Presence</h4>
+                            <ul class="social-list">
+                                <li><a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/" target="_blank"
+                                        rel="noopener" class="social"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://github.com/Tandon245" target="_blank" rel="noopener"
+                                        class="social"><i class="fab fa-github"></i></a></li>
+                                <li><a href="https://www.hackerrank.com/profile/tandonabhishek21" target="_blank"
+                                        rel="noopener" class="social"><i class="fab fa-hackerrank"></i></a></li>
+                                <li><a href="https://leetcode.com/u/AbhiTandon2617/" target="_blank" rel="noopener"
+                                        class="social"><i class="fa fa-code"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Column -->
+                    <div class="contact-form-container">
+                        <h3>Send me a message</h3>
+
+                        <!-- FORM START -->
+                        <form id="contact-form" action="https://formsubmit.co/tandonabhishek245@gmail.com"
+                            method="POST">
+
+                            <input type="hidden" name="_subject" value="Portfolio Query">
+
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://tandon245.github.io/">
+
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" required
+                                    placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" required
+                                    placeholder="john@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mobile" class="form-label">Mobile Number</label>
+                                <input type="tel" id="mobile" name="mobile" class="form-control" required
+                                    placeholder="+91 1234567890">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Requirement / Message</label>
+                                <textarea id="message" name="message" class="form-control" rows="5" required
+                                    placeholder="How can I help you?"></textarea>
+                            </div>
+
+                            <button type="submit" class="button primary">Send Message</button>
+                        </form>
+                        <!-- FORM END -->
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer id="site-footer">
+            <small>&copy; 2025 Abhishek Tandon. All rights reserved.</small>
+        </footer>
+
+    </div>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
