@@ -152,7 +152,7 @@ const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+      e.preventDefault();
 
     const formData = new FormData(contactForm);
     const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -164,7 +164,7 @@ if (contactForm) {
     fetch(contactForm.action, {
       method: "POST",
       body: formData,
-      headers: {
+        headers: {
         'Accept': 'application/json'
       }
     })
@@ -172,9 +172,9 @@ if (contactForm) {
         if (response.ok) {
           alert("Thank you! Your message has been sent successfully.");
           contactForm.reset();
-        } else {
+          } else {
           alert("Oops! There was a problem submitting your form.");
-        }
+          }
       })
       .catch(error => {
         alert("Error: Could not send message.");
@@ -183,5 +183,5 @@ if (contactForm) {
         submitBtn.innerText = originalBtnText;
         submitBtn.disabled = false;
       });
-  });
-}
+      });
+    }

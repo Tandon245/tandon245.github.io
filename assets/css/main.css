@@ -253,6 +253,139 @@ main#main {
   color: #cfe6ff;
 }
 
+/* Inline icons for existing skill lists */
+.skill-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-tags li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-tags .icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  position: relative;
+}
+
+.skill-tags .icon-wrap img.inline-icon,
+.skill-tags .icon-wrap i {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* make raster/SVG icons visible on dark background when the icon image is monochrome
+   (many brand SVGs are black) — this lightens/inverts them so they appear clearly.
+   For true brand colors, we'll replace images with inline SVGs or local colored SVG files.
+*/
+.skill-tags .icon-wrap img.inline-icon {
+  filter: invert(1) brightness(2) saturate(0.8);
+}
+
+.skill-tags .icon-wrap::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(7, 20, 40, 0.98);
+  color: #d8e8ff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease;
+}
+
+.skill-tags .icon-wrap:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Technologies / Tools icon grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  justify-items: center;
+  align-items: center;
+}
+
+.tech-item {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #cfe6ff;
+  position: relative;
+  text-decoration: none;
+  transition: transform .18s ease, background .18s ease;
+}
+
+.tech-item i,
+.tech-item .tech-svg {
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+}
+
+.tech-item img.tech-svg {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.tech-item:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(180deg, rgba(124, 192, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.tech-item::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(7, 20, 40, 0.98);
+  color: #d8e8ff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease;
+}
+
+.tech-item:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width:480px) {
+  .tech-grid { grid-template-columns: repeat(4, 1fr); }
+  .tech-item { width: 60px; height: 60px; }
+  .tech-item i, .tech-item .tech-svg { font-size: 1.5rem; }
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
