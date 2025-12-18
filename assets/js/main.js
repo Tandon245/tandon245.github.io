@@ -185,3 +185,44 @@ if (contactForm) {
       });
       });
     }
+
+const heroSub = document.querySelector('.hero-sub');
+if (heroSub) {
+  const text = heroSub.textContent.trim();
+  heroSub.textContent = '';
+  let i = 0;
+  const typing = setInterval(() => {
+    heroSub.textContent += text[i];
+    i++;
+    if (i >= text.length) clearInterval(typing);
+  }, 60);
+}
+const hero = document.querySelector(".hero");
+if (hero) {
+  hero.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+    hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+  });
+}
+const panels = document.querySelectorAll(".panel.reveal");
+panels.forEach(panel => {
+  const children = panel.querySelectorAll("h2, p, li, img, a");
+  children.forEach((el, i) => {
+    el.style.transitionDelay = `${i * 100}ms`;
+  });
+});
+// Scroll reveal: move main content upward when user scrolls past hero
+const mainEl = document.querySelector('main#main');
+let revealed = false;
+
+window.addEventListener('scroll', () => {
+  const triggerPoint = window.innerHeight * 0.2; // how far to scroll before revealing
+  if (!revealed && window.scrollY > triggerPoint) {
+    revealed = true;
+    mainEl.style.transform = 'translateY(0)';
+  }
+});
+window.addEventListener('scroll', () => {
+  document.body.classList.toggle('scrolled', window.scrollY > 20);
+});
