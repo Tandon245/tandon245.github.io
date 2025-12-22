@@ -1,16 +1,23 @@
 (function () {
   "use strict";
 
+  /* ===============================
+     ELEMENTS
+     =============================== */
   var header = document.getElementById("site-header");
   var hero = document.getElementById("hero");
   var navList = document.querySelector(".nav-list");
   var navToggle = document.getElementById("navToggle");
   var navLinks = document.querySelectorAll('.nav-list a[data-scroll]');
   var reveals = document.querySelectorAll(".reveal");
+  var mainEl = document.querySelector("main#main");
 
+  /* ===============================
+     HEADER SCROLL STATE
+     =============================== */
   function updateHeaderOnScroll() {
     var scrollY = window.scrollY || window.pageYOffset;
-    if (hero && scrollY > hero.offsetTop + (hero.offsetHeight * 0.65)) {
+    if (hero && scrollY > hero.offsetTop + hero.offsetHeight * 0.65) {
       header.classList.remove("header--transparent");
       header.classList.add("header--solid");
     } else {
@@ -19,16 +26,29 @@
     }
   }
 
+  /* ===============================
+     SMOOTH SCROLL
+     =============================== */
   function smoothScrollHandler(e) {
     var href = this.getAttribute("href");
     if (!href || href.indexOf("#") !== 0) return;
+
     var target = document.querySelector(href);
     if (!target) return;
+
     e.preventDefault();
     var headerHeight = header.offsetHeight || 64;
-    var top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+    var top =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight -
+      12;
+
     window.scrollTo({ top: top, behavior: "smooth" });
-    if (navList.classList.contains("open")) navList.classList.remove("open");
+
+    if (navList.classList.contains("open")) {
+      navList.classList.remove("open");
+    }
   }
 
   if (navToggle) {
@@ -41,77 +61,75 @@
     a.addEventListener("click", smoothScrollHandler);
   });
 
-  var scrollAnchors = document.querySelectorAll('a[data-scroll]');
-  scrollAnchors.forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      if (this.closest(".nav-list")) return;
-      smoothScrollHandler.call(this, e);
-    });
-  });
-
+  /* ===============================
+     REVEAL ON SCROLL
+     =============================== */
   function initReveal() {
     if ("IntersectionObserver" in window) {
-      var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+      var obs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+      );
 
       reveals.forEach(function (el) {
         obs.observe(el);
       });
-    } else {
-      var throttleTimeout = null;
-      function revealOnScrollFallback() {
-        if (throttleTimeout) return;
-        throttleTimeout = setTimeout(function () {
-          throttleTimeout = null;
-          var windowBottom = window.scrollY + window.innerHeight;
-          reveals.forEach(function (el) {
-            var rect = el.getBoundingClientRect();
-            var elTop = rect.top + window.scrollY;
-            if (windowBottom > elTop + 60) {
-              el.classList.add("active");
-            }
-          });
-        }, 150);
-      }
-      revealOnScrollFallback();
-      window.addEventListener("scroll", revealOnScrollFallback);
-      window.addEventListener("resize", revealOnScrollFallback);
     }
   }
 
+  /* ===============================
+     ACTIVE NAV (FIXED HOME ISSUE)
+     =============================== */
   function updateActiveNav() {
-    var fromTop = window.scrollY + (header.offsetHeight || 70) + 20;
+    var fromTop =
+      window.scrollY + (header.offsetHeight || 70) + 20;
+
     var navItems = document.querySelectorAll(".nav-list .nav-item");
     var found = false;
 
     document.querySelectorAll("main section[id]").forEach(function (section) {
       var top = section.offsetTop;
       var bottom = top + section.offsetHeight;
+
       if (fromTop >= top && fromTop < bottom) {
         var id = section.getAttribute("id");
-        navItems.forEach(function (li) { li.classList.remove("active"); });
-        var link = document.querySelector('.nav-list a[href="#' + id + '"]');
-        if (link && link.parentElement) {
+
+        navItems.forEach(function (li) {
+          li.classList.remove("active");
+        });
+
+        var link = document.querySelector(
+          '.nav-list a[href="#' + id + '"]'
+        );
+
+        if (link) {
           link.parentElement.classList.add("active");
           found = true;
         }
       }
     });
-    if (!found) {
-      if (window.scrollY < 220) {
-        document.querySelectorAll(".nav-list .nav-item").forEach(function (li) { li.classList.remove("active"); });
-        var first = document.querySelector(".nav-list .nav-item");
-        if (first) first.classList.add("active");
-      }
+
+    // ✅ Home active when at top
+    if (!found && hero && window.scrollY < hero.offsetHeight * 0.6) {
+      navItems.forEach(function (li) {
+        li.classList.remove("active");
+      });
+
+      var home = document.querySelector('.nav-list a[href="#hero"]');
+      if (home) home.parentElement.classList.add("active");
     }
   }
 
+  /* ===============================
+     THROTTLE
+     =============================== */
   function throttle(fn, wait) {
     var last = 0;
     return function () {
@@ -123,22 +141,69 @@
     };
   }
 
+  /* ===============================
+     HERO ENTRY ANIMATION
+     =============================== */
+  function initHeroIntro() {
+    setTimeout(function () {
+      document
+        .querySelectorAll(".hero-inner, .hero-cta")
+        .forEach(function (el) {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        });
+    }, 120);
+  }
+
+  /* ===============================
+     HERO PARALLAX
+     =============================== */
+  var heroEl = document.querySelector(".hero");
+  if (heroEl) {
+    heroEl.addEventListener("mousemove", function (e) {
+      var x = (e.clientX / window.innerWidth - 0.5) * 10;
+      var y = (e.clientY / window.innerHeight - 0.5) * 10;
+      heroEl.style.backgroundPosition =
+        50 + x + "% " + (50 + y) + "%";
+    });
+  }
+
+  /* ===============================
+     MAIN REVEAL + BODY STATE
+     =============================== */
+  var revealed = false;
+
+  window.addEventListener("scroll", function () {
+    document.body.classList.toggle("scrolled", window.scrollY > 20);
+
+    var triggerPoint = window.innerHeight * 0.2;
+    if (!revealed && window.scrollY > triggerPoint) {
+      revealed = true;
+      mainEl.style.transform = "translateY(0)";
+    }
+  });
+
+  /* ===============================
+     INIT
+     =============================== */
   function init() {
     updateHeaderOnScroll();
-    window.addEventListener("scroll", throttle(function () {
-      updateHeaderOnScroll();
-      updateActiveNav();
-    }, 120));
-    window.addEventListener("resize", throttle(updateHeaderOnScroll, 180));
+    updateActiveNav();
     initReveal();
+    initHeroIntro();
 
-    setTimeout(function () {
-      document.querySelectorAll(".hero-inner, .hero-cta").forEach(function (el, i) {
-        el.style.transition = "opacity .6s ease, transform .6s ease";
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-      });
-    }, 120);
+    window.addEventListener(
+      "scroll",
+      throttle(function () {
+        updateHeaderOnScroll();
+        updateActiveNav();
+      }, 120)
+    );
+
+    window.addEventListener(
+      "resize",
+      throttle(updateHeaderOnScroll, 180)
+    );
   }
 
   if (document.readyState === "loading") {
@@ -148,15 +213,18 @@
   }
 })();
 
+/* ===============================
+   CONTACT FORM
+   =============================== */
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
     const formData = new FormData(contactForm);
     const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn.innerText;
+    const originalText = submitBtn.innerText;
 
     submitBtn.innerText = "Sending...";
     submitBtn.disabled = true;
@@ -164,113 +232,78 @@ if (contactForm) {
     fetch(contactForm.action, {
       method: "POST",
       body: formData,
-        headers: {
-        'Accept': 'application/json'
-      }
+      headers: { Accept: "application/json" }
     })
-      .then(response => {
-        if (response.ok) {
-          alert("Thank you! Your message has been sent successfully.");
+      .then(res => {
+        if (res.ok) {
+          alert("Thank you! Your message has been sent.");
           contactForm.reset();
-          } else {
-          alert("Oops! There was a problem submitting your form.");
-          }
+        } else {
+          alert("Submission failed. Please try again.");
+        }
       })
-      .catch(error => {
-        alert("Error: Could not send message.");
-      })
+      .catch(() => alert("Network error."))
       .finally(() => {
-        submitBtn.innerText = originalBtnText;
+        submitBtn.innerText = originalText;
         submitBtn.disabled = false;
       });
-      });
-    }
+  });
+}
 
-const heroSub = document.querySelector('.hero-sub');
+/* ===============================
+   HERO TYPING EFFECT
+   =============================== */
+const heroSub = document.querySelector(".hero-sub");
 if (heroSub) {
   const text = heroSub.textContent.trim();
-  heroSub.textContent = '';
+  heroSub.textContent = "";
   let i = 0;
+
   const typing = setInterval(() => {
-    heroSub.textContent += text[i];
-    i++;
+    heroSub.textContent += text[i++];
     if (i >= text.length) clearInterval(typing);
   }, 60);
 }
-const hero = document.querySelector(".hero");
-if (hero) {
-  hero.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 10;
-    const y = (e.clientY / window.innerHeight - 0.5) * 10;
-    hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
-  });
-}
-const panels = document.querySelectorAll(".panel.reveal");
-panels.forEach(panel => {
-  const children = panel.querySelectorAll("h2, p, li, img, a");
-  children.forEach((el, i) => {
-    el.style.transitionDelay = `${i * 100}ms`;
-  });
-});
-// Scroll reveal: move main content upward when user scrolls past hero
-const mainEl = document.querySelector('main#main');
-let revealed = false;
 
-window.addEventListener('scroll', () => {
-  const triggerPoint = window.innerHeight * 0.2; // how far to scroll before revealing
-  if (!revealed && window.scrollY > triggerPoint) {
-    revealed = true;
-    mainEl.style.transform = 'translateY(0)';
-  }
-});
-window.addEventListener('scroll', () => {
-  document.body.classList.toggle('scrolled', window.scrollY > 20);
-});
-
-/* Theme toggle: dynamic switching, persistence, and system preference */
+/* ===============================
+   THEME TOGGLE
+   =============================== */
 (function () {
-  var THEME_KEY = 'theme';
-  var themeToggle = document.getElementById('themeToggle');
-  var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  const THEME_KEY = "theme";
+  const themeToggle = document.getElementById("themeToggle");
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
 
   function applyTheme(theme) {
-    document.body.classList.remove('theme-dark', 'theme-light');
-    document.body.classList.add(theme === 'dark' ? 'theme-dark' : 'theme-light');
+    document.body.classList.remove("theme-dark", "theme-light");
+    document.body.classList.add(theme === "dark" ? "theme-dark" : "theme-light");
+
     if (themeToggle) {
-      themeToggle.setAttribute('aria-pressed', theme === 'dark');
-      var icon = themeToggle.querySelector('i');
-      if (icon) icon.className = theme === 'dark' ? 'fa fa-moon' : 'fa fa-sun';
-      if (theme === 'dark') themeToggle.classList.add('active'); else themeToggle.classList.remove('active');
+      themeToggle.setAttribute("aria-pressed", theme === "dark");
+      const icon = themeToggle.querySelector("i");
+      icon.className = theme === "dark" ? "fa fa-moon" : "fa fa-sun";
+      themeToggle.classList.toggle("active", theme === "dark");
     }
   }
 
   function initTheme() {
-    var saved = null;
-    try { saved = localStorage.getItem(THEME_KEY); } catch (e) { /* ignore */ }
-    var prefersDark = mq ? mq.matches : false;
-    var theme = saved || (prefersDark ? 'dark' : 'light');
+    const saved = localStorage.getItem(THEME_KEY);
+    const theme = saved || (mq.matches ? "dark" : "light");
     applyTheme(theme);
 
-    // If user hasn't saved a preference, follow system changes
-    if (!saved && mq && mq.addEventListener) {
-      mq.addEventListener('change', function (e) {
-        applyTheme(e.matches ? 'dark' : 'light');
-      });
-    }
+    mq.addEventListener("change", e => {
+      if (!saved) applyTheme(e.matches ? "dark" : "light");
+    });
 
-    if (themeToggle) {
-      themeToggle.addEventListener('click', function () {
-        var cur = document.body.classList.contains('theme-dark') ? 'dark' : 'light';
-        var next = cur === 'dark' ? 'light' : 'dark';
-        try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* ignore */ }
-        applyTheme(next);
-      });
-    }
+    themeToggle?.addEventListener("click", () => {
+      const next = document.body.classList.contains("theme-dark")
+        ? "light"
+        : "dark";
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+    });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-  } else {
-    initTheme();
-  }
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", initTheme)
+    : initTheme();
 })();

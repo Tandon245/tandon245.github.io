@@ -44,8 +44,8 @@
                         <li class="nav-item active"><a href="#hero" data-scroll>Home</a></li>
                         <li class="nav-item"><a href="#about" data-scroll>About</a></li>
                         <li class="nav-item"><a href="#projects" data-scroll>Projects</a></li>
-                         <li class="nav-item"><a href="#skills" data-scroll>Skills</a></li>
-                        <li class="nav-item"><a href="#resume" data-scroll>Resume</a></li>
+                        <li class="nav-item"><a href="#skills" data-scroll>Skills</a></li>
+                        <li class="nav-item"><a href="#experience" data-scroll>Experience</a></li>
                         <li class="nav-item"><a href="#contact" data-scroll>Contact</a></li>
                     </ul>
                 </nav>
@@ -55,17 +55,20 @@
         <section id="hero" class="hero">
             <div class="hero-inner">
                 <h1 class="hero-title">Abhishek Tandon</h1>
-                <p class="hero-sub" style="font-size: 1.25rem; font-weight: 700; color: #3498db; margin-bottom: 0.5rem;">
+                <p class="hero-sub"
+                    style="font-size: 1.25rem; font-weight: 700; color: #3498db; margin-bottom: 0.5rem;">
                     Android Developer | Kotlin | Jetpack Compose | MVVM
                 </p>
                 <p class="hero-desc" style="max-width: 700px; margin: 0 auto 2rem; line-height: 1.6; opacity: 0.9;">
-                    Specializing in building production-grade mobile applications with <strong>Clean Architecture</strong>. 
-                    Expert in <strong>Hardware SDK integration</strong>, REST API binding, and performance optimization 
+                    Specializing in building production-grade mobile applications with <strong>Clean
+                        Architecture</strong>.
+                    Expert in <strong>Hardware SDK integration</strong>, REST API binding, and performance optimization
                     to deliver seamless user experiences.
                 </p>
                 <div class="hero-actions" style="display: flex; gap: 1rem; justify-content: center;">
                     <a class="hero-cta" href="#projects" data-scroll>View Projects</a>
-                    <a class="hero-cta" href="#contact" data-scroll style="background: transparent; border: 2px solid white;">Let's Talk</a>
+                    <a class="hero-cta" href="#contact" data-scroll
+                        >Let's Talk</a>
                 </div>
             </div>
 
@@ -107,83 +110,102 @@
             <section id="projects" class="panel reveal panel--wide">
                 <h2 class="section-title">Key Projects</h2>
 
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <figure class="project-media" aria-hidden="false">
+                <div class="projects-list">
+
+                    <!-- Project 1 -->
+                    <article class="project-row">
+                        <div class="project-visual">
                             <img src="images/brio.webp" alt="Brio Android App" loading="lazy"
-                                onerror="this.src='https://placehold.co/600x400?text=Brio+App'" />
-                        </figure>
-                        <div class="project-body">
+                                onerror="this.src='https://placehold.co/500x900?text=Brio+App'" />
+                        </div>
+
+                        <div class="project-content">
                             <span class="meta">Smart Fitness Tracking Application</span>
                             <h3>Brio — Android Application</h3>
-                            <p>This project delivers a comprehensive fitness experience by integrating multiple smart
-                                health devices
-                                through a custom SDK for real-time measurement. The application supports body scale
-                                tracking, smart tape
-                                measurements, food scale syncing, and skipping-rope activity monitoring.</p>
+                            <p>
+                                A comprehensive fitness platform integrating multiple smart
+                                health devices using a custom SDK for real-time measurements,
+                                analytics, and dashboards.
+                            </p>
                             <a class="button outline"
                                 href="https://play.google.com/store/apps/details?id=sa.com.brio.android" target="_blank"
-                                rel="noopener">View on Play Store</a>
+                                rel="noopener">
+                                View on Play Store
+                            </a>
                         </div>
                     </article>
 
-                    <article class="project-card">
-                        <figure class="project-media">
+                    <!-- Project 2 -->
+                    <article class="project-row reverse">
+                        <div class="project-visual">
                             <img src="images/moconnect.webp" alt="MoConnect App" loading="lazy"
-                                onerror="this.src='https://placehold.co/600x400?text=MoConnect'" />
-                        </figure>
-                        <div class="project-body">
+                                onerror="this.src='https://placehold.co/500x900?text=MoConnect'" />
+                        </div>
+
+                        <div class="project-content">
                             <span class="meta">Airtime & Utility Recharge Application</span>
-                            <h3>MoConnect: SIM, Airtime & More</h3>
-                            <p>This project delivers a complete Android solution for airtime top-ups, international
-                                mobile recharges,
-                                electricity bill payments, DStv subscriptions, and wallet-based transactions. Built with
-                                Kotlin with fully integrated APIs.</p>
+                            <h3>MoConnect — SIM, Airtime & More</h3>
+                            <p>
+                                A full-stack Android fintech solution for airtime top-ups,
+                                international recharges, utility payments, and wallet-based
+                                transactions.
+                            </p>
                             <a class="button outline"
-                                href="https://play.google.com/store/apps/details?id=za.co.moconnect.android.customer&hl=en_IN"
-                                target="_blank" rel="noopener">View on Play Store</a>
+                                href="https://play.google.com/store/apps/details?id=za.co.moconnect.android.customer"
+                                target="_blank" rel="noopener">
+                                View on Play Store
+                            </a>
                         </div>
                     </article>
 
-                    <article class="project-card">
-                        <figure class="project-media">
+                    <!-- Project 3 -->
+                    <article class="project-row">
+                        <div class="project-visual">
                             <img src="images/easicall.webp" alt="EasiApp" loading="lazy"
-                                onerror="this.src='https://placehold.co/600x400?text=EasiApp'" />
-                        </figure>
-                        <div class="project-body">
+                                onerror="this.src='https://placehold.co/500x900?text=EasiApp'" />
+                        </div>
+
+                        <div class="project-content">
                             <span class="meta">Android SIM & Recharge Application</span>
                             <h3>EasiApp</h3>
-                            <p>EasiApp enables users to purchase SIM cards, recharge mobile numbers (local and
-                                international), and
-                                perform DTH recharges. The application includes secure wallet functionality, detailed
-                                commission
-                                reports, and quick support options.</p>
+                            <p>
+                                Enables SIM purchases, recharges, wallet transactions,
+                                commission reports, and dealer management with secure APIs.
+                            </p>
                             <a class="button outline"
-                                href="https://play.google.com/store/apps/details?id=za.co.easicall.rica&hl=en_IN"
-                                target="_blank" rel="noopener">View on Play Store</a>
+                                href="https://play.google.com/store/apps/details?id=za.co.easicall.rica" target="_blank"
+                                rel="noopener">
+                                View on Play Store
+                            </a>
                         </div>
                     </article>
 
-                    <article class="project-card">
-                        <figure class="project-media">
+                    <!-- Project 4 -->
+                    <article class="project-row reverse">
+                        <div class="project-visual">
                             <img src="images/matchmaker.webp" alt="Selective Matchmaker" loading="lazy"
-                                onerror="this.src='https://placehold.co/600x400?text=Matchmaker'" />
-                        </figure>
-                        <div class="project-body">
-                            <span class="meta">Mobile Development | Android</span>
+                                onerror="this.src='https://placehold.co/500x900?text=Matchmaker'" />
+                        </div>
+
+                        <div class="project-content">
+                            <span class="meta">Native Android Matchmaking Platform</span>
                             <h3>Selective Matchmaker</h3>
-                            <p>A native Android platform focused on high-intent matchmaking using Kotlin. The app
-                                enables users to
-                                create detailed profiles, securely authenticate, and utilize granular custom filtering
-                                to find
-                                compatible matches.</p>
+                            <p>
+                                A high-intent matchmaking platform built in Kotlin with
+                                secure authentication, advanced filtering, and optimized
+                                performance.
+                            </p>
                             <a class="button outline"
                                 href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android"
-                                target="_blank" rel="noopener">View on Play Store</a>
+                                target="_blank" rel="noopener">
+                                View on Play Store
+                            </a>
                         </div>
                     </article>
+
                 </div>
             </section>
+
             <section id="skills" class="panel reveal">
                 <h2 class="section-title">Technical Skills</h2>
 
@@ -300,16 +322,72 @@
                     </li>
                 </ul>
             </section>
-
-          
-
-            <section id="resume" class="panel reveal">
+            <section id="experience" class="panel reveal">
                 <h2 class="section-title">Professional Experience</h2>
-                <p style="text-align:center;">Explore my detailed experience and download a PDF resume below.</p>
-                <div class="resume-buttons" style="display:flex;justify-content:center;gap:16px;margin-top:20px;">
-                    <a class="button primary" href="assets/resume/Er_Abhishek_Tandon_Resume.pdf" target="_blank">📄 View
-                        Resume</a>
-                    <a class="button outline" href="#contact" data-scroll>💬 Contact Me</a>
+
+                <div class="experience-timeline">
+
+                    <!-- Experience 1 -->
+                    <div class="experience-item">
+                        <div class="experience-marker">
+                            <span class="experience-dot"></span>
+                        </div>
+
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <span class="experience-duration">Oct 2024 – Present</span>
+                                <h3>Android Developer</h3>
+                                <span class="experience-company">Vidursoft</span>
+                            </div>
+
+                            <p>
+                                Leading Android development for fintech and health-tech products with a
+                                strong focus on <strong>Kotlin</strong>, <strong>Jetpack Compose</strong>,
+                                BLE hardware SDK integration, and scalable clean architecture.
+                            </p>
+
+                            <ul>
+                                <li>Integrated multiple BLE-enabled fitness devices (scales, ropes, sensors)</li>
+                                <li>Improved real-time device sync reliability and performance</li>
+                                <li>Collaborated closely with backend teams for secure REST API integration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="experience-item">
+                        <div class="experience-marker">
+                            <span class="experience-dot"></span>
+                        </div>
+
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <span class="experience-duration">Mar 2023 – Sep 2024</span>
+                                <h3>Java / Android Developer</h3>
+                                <span class="experience-company">Monoprabal Engineering</span>
+                            </div>
+
+                            <p>
+                                Contributed to Android applications and backend systems using
+                                <strong>Java</strong> and <strong>Spring Boot</strong>, focusing on
+                                performance optimization and maintainable architecture.
+                            </p>
+
+                            <ul>
+                                <li>Developed native Android UI flows and business logic</li>
+                                <li>Built and maintained REST APIs using Spring Boot</li>
+                                <li>Worked with SQL databases and backend integrations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA -->
+                <div class="experience-cta">
+                    <a class="button primary" href="assets/resume/Er_Abhishek_Tandon_Resume.pdf" target="_blank">
+                        📄 Download Resume (PDF)
+                    </a>
                 </div>
             </section>
 
