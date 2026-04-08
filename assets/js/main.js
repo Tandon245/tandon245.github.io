@@ -1,9 +1,6 @@
 (function () {
   "use strict";
 
-  /* ===============================
-     ELEMENTS
-     =============================== */
   var header = document.getElementById("site-header");
   var hero = document.getElementById("hero");
   var navList = document.querySelector(".nav-list");
@@ -12,9 +9,6 @@
   var reveals = document.querySelectorAll(".reveal");
   var mainEl = document.querySelector("main#main");
 
-  /* ===============================
-     HEADER SCROLL STATE
-     =============================== */
   function updateHeaderOnScroll() {
     var scrollY = window.scrollY || window.pageYOffset;
     if (hero && scrollY > hero.offsetTop + hero.offsetHeight * 0.65) {
@@ -26,9 +20,6 @@
     }
   }
 
-  /* ===============================
-     SMOOTH SCROLL
-     =============================== */
   function smoothScrollHandler(e) {
     var href = this.getAttribute("href");
     if (!href || href.indexOf("#") !== 0) return;
@@ -61,9 +52,6 @@
     a.addEventListener("click", smoothScrollHandler);
   });
 
-  /* ===============================
-     REVEAL ON SCROLL
-     =============================== */
   function initReveal() {
     if ("IntersectionObserver" in window) {
       var obs = new IntersectionObserver(
@@ -84,9 +72,6 @@
     }
   }
 
-  /* ===============================
-     ACTIVE NAV (FIXED HOME ISSUE)
-     =============================== */
   function updateActiveNav() {
     var fromTop =
       window.scrollY + (header.offsetHeight || 70) + 20;
@@ -116,7 +101,6 @@
       }
     });
 
-    // ✅ Home active when at top
     if (!found && hero && window.scrollY < hero.offsetHeight * 0.6) {
       navItems.forEach(function (li) {
         li.classList.remove("active");
@@ -126,10 +110,6 @@
       if (home) home.parentElement.classList.add("active");
     }
   }
-
-  /* ===============================
-     THROTTLE
-     =============================== */
   function throttle(fn, wait) {
     var last = 0;
     return function () {
@@ -141,9 +121,6 @@
     };
   }
 
-  /* ===============================
-     HERO ENTRY ANIMATION
-     =============================== */
   function initHeroIntro() {
     setTimeout(function () {
       document
@@ -155,9 +132,6 @@
     }, 120);
   }
 
-  /* ===============================
-     HERO PARALLAX
-     =============================== */
   var heroEl = document.querySelector(".hero");
   if (heroEl) {
     heroEl.addEventListener("mousemove", function (e) {
@@ -168,9 +142,6 @@
     });
   }
 
-  /* ===============================
-     MAIN REVEAL + BODY STATE
-     =============================== */
   var revealed = false;
 
   window.addEventListener("scroll", function () {
@@ -182,10 +153,6 @@
       mainEl.style.transform = "translateY(0)";
     }
   });
-
-  /* ===============================
-     INIT
-     =============================== */
   function init() {
     updateHeaderOnScroll();
     updateActiveNav();
@@ -212,10 +179,6 @@
     init();
   }
 })();
-
-/* ===============================
-   CONTACT FORM
-   =============================== */
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
@@ -250,9 +213,6 @@ if (contactForm) {
   });
 }
 
-/* ===============================
-   HERO TYPING EFFECT
-   =============================== */
 const heroSub = document.querySelector(".hero-sub");
 if (heroSub) {
   const text = heroSub.textContent.trim();
@@ -265,9 +225,6 @@ if (heroSub) {
   }, 60);
 }
 
-/* ===============================
-   THEME TOGGLE
-   =============================== */
 (function () {
   const THEME_KEY = "theme";
   const themeToggle = document.getElementById("themeToggle");
