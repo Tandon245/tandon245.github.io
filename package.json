@@ -1,0 +1,12 @@
+{
+  "name": "tandon245.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "sass --no-source-map assets/sass:assets/css",
+    "check:css": "npm run build:css && git --no-pager diff --exit-code assets/css/main.css || (echo \"Compiled CSS differs from committed assets/css/main.css. Run npm run build:css and commit.\" && exit 1)"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}

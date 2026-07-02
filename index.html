@@ -1,209 +1,717 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Abhishek Tandon | Software Developer Portfolio</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" /> 
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
-    </head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<body class="is-preload">
+    <title>Abhishek Tandon | Senior Android Developer — Kotlin, Jetpack Compose, MVVM</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon16x16.png">
+    <meta name="description"
+        content="Abhishek Tandon is a Senior Android Developer based in Noida, India with 3+ years of experience building production-grade Android apps using Kotlin, Jetpack Compose, MVVM Clean Architecture, REST APIs, Firebase, and BLE SDK integration." />
+    <meta name="keywords"
+        content="Abhishek Tandon, Android Developer, Kotlin Developer, Jetpack Compose, MVVM, Clean Architecture, Firebase, REST API, BLE Integration, Android Engineer, Mobile Developer India, Noida Android Developer, Senior Android Developer" />
+    <meta name="author" content="Abhishek Tandon" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tandon245.github.io/" />
 
-    <div id="wrapper" class="fade-in">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tandon245.github.io/" />
+    <meta property="og:title" content="Abhishek Tandon | Senior Android Developer" />
+    <meta property="og:description"
+        content="3+ years building production Android apps with Kotlin, Jetpack Compose, MVVM, Firebase & BLE SDK integration. Available for new opportunities." />
+    <meta property="og:image" content="https://tandon245.github.io/images/profile.png" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Abhishek Tandon Portfolio" />
 
-        <div id="intro">
-            <h1>Abhishek Tandon: Software Developer</h1>
-            <p>2+ Years Experience in Java, Kotlin, and Scalable Application Development.</p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">View Portfolio</a></li>
-            </ul>
-        </div>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abhishek Tandon | Senior Android Developer" />
+    <meta name="twitter:description"
+        content="3+ years building production Android apps with Kotlin, Jetpack Compose, MVVM, Firebase & BLE SDK integration." />
+    <meta name="twitter:image" content="https://tandon245.github.io/images/profile.png" />
 
-        <header id="header">
-            <div class="logo">Abhishek Tandon</div>
-            <p class="header-subtitle">Software Developer | Full Stack & Android Enthusiast</p>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abhishek Tandon",
+    "jobTitle": "Senior Android Developer",
+    "description": "Senior Android Developer with 3+ years of experience in Kotlin, Jetpack Compose, MVVM Clean Architecture, Firebase, REST APIs, and BLE hardware SDK integration.",
+    "url": "https://tandon245.github.io/",
+    "email": "tandonabhishek245@gmail.com",
+    "telephone": "+91-9782205815",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Noida",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201016",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/",
+      "https://github.com/Tandon245",
+      "https://www.hackerrank.com/profile/tandonabhishek21",
+      "https://leetcode.com/u/AbhiTandon2617/"
+    ],
+    "knowsAbout": ["Android Development", "Kotlin", "Jetpack Compose", "MVVM Architecture", "Clean Architecture", "Firebase", "REST API", "BLE Integration", "Java", "Spring Boot"],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
+      "address": { "@type": "PostalAddress", "addressLocality": "Bhopal", "addressCountry": "IN" }
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Vidursoft",
+      "address": { "@type": "PostalAddress", "addressLocality": "Ghaziabad", "addressCountry": "IN" }
+    }
+  }
+  </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Source+Sans+Pro:wght@700;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="theme-color" content="#2c3e50" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/education.css" />
+</head>
+
+<body>
+
+    <div id="site">
+        <header id="site-header" class="header--transparent" role="banner">
+            <div class="header-inner">
+                <div class="brand" aria-label="Abhishek Tandon — Home">Abhishek Tandon</div>
+
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark theme"
+                    title="Toggle light / dark mode" aria-pressed="false">
+                    <i class="fa fa-moon" aria-hidden="true"></i>
+                </button>
+
+                <button id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" class="nav-toggle">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav id="site-nav" class="nav" aria-label="Primary navigation">
+                    <ul class="nav-list" role="list">
+                        <li class="nav-item active"><a href="#hero" data-scroll>Home</a></li>
+                        <li class="nav-item"><a href="#about" data-scroll>About</a></li>
+                        <li class="nav-item"><a href="#projects" data-scroll>Projects</a></li>
+                        <li class="nav-item"><a href="#skills" data-scroll>Skills</a></li>
+                        <li class="nav-item"><a href="#experience" data-scroll>Experience</a></li>
+                        <li class="nav-item"><a href="#education" data-scroll>Education</a></li>
+                        <li class="nav-item"><a href="#contact" data-scroll>Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
-        <nav id="nav">
-            <ul class="links">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div id="main">
-
-            <section id="about" class="featured">
-                <div class="profile-image">
-                    <img src="images/profile.png" alt="Abhishek Tandon" />
+        <section id="hero" class="hero" aria-label="Introduction">
+            <div class="hero-inner">
+                <div class="availability-badge">
+                    <span class="status-dot"></span>
+                    Open to Senior Android Opportunities
                 </div>
-                <header class="major">
-                    <div class="section-title-wrapper">
-                        <h2 class="section-title">A Bit About Me</h2>
+                <h1 class="hero-title">Abhishek Tandon</h1>
+                <p class="hero-sub"
+                    style="font-size: 1.25rem; font-weight: 700; color: #3498db; margin-bottom: 0.5rem;">
+                    Senior Android Developer · Kotlin · Jetpack Compose · MVVM · Firebase
+                </p>
+                <p class="hero-desc" style="max-width: 700px; margin: 0 auto 2rem; line-height: 1.6; opacity: 0.9;">
+                    3+ years engineering <strong>production-grade Android applications</strong> with
+                    <strong>Clean Architecture</strong> across fintech, health-tech, and social platforms.
+                    Expert in <strong>BLE Hardware SDK integration</strong>, REST API binding, Firebase services,
+                    and CI/CD pipeline management to deliver seamless, crash-resilient user experiences.
+                </p>
+                <div class="hero-actions">
+
+                    <a class="button primary hero-btn" href="#projects" data-scroll>
+                        <i class="fa fa-layer-group"></i>
+                        <span>View Projects</span>
+                    </a>
+
+                    <a class="button primary hero-btn" href="assets/resume/resume.pdf" target="_blank" rel="noopener">
+
+                        <i class="fa fa-download"></i>
+                        <span>Download Resume</span>
+                    </a>
+
+                    <a class="button primary hero-btn" href="#contact" data-scroll>
+                        <i class="fa fa-comments"></i>
+                        <span>Let's Talk</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a class="scroll-hint" href="#about" data-scroll aria-label="Scroll to About section">
+                <span class="fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+        </section>
+
+        <main id="main" role="main">
+
+            <section id="about" class="panel reveal" aria-labelledby="about-title">
+                <div class="panel-inner about-inner">
+                    <div class="profile">
+                        <img src="images/profile.webp"
+                            alt="Abhishek Tandon — Senior Android Developer based in Noida, India" width="220"
+                            height="220" loading="lazy" />
                     </div>
-                    <p>
-                        I am a <b>Software Developer</b> with <b> years of professional experience</b> specializing in
-                        building robust and scalable applications. My core expertise lies in <b>Java and Kotlin</b>, with a
-                        strong foundation in <b>SQL, HTML, and CSS</b>. I am deeply passionate about <b>Android
-                        Development</b> and backend system architecture, focusing on delivering high-performance,
-                        maintainable, and user-centric solutions. I thrive in dynamic environments and am dedicated to
-                        continuous learning and utilizing cutting-edge technologies.
-                    </p>
-                </header>
-                <ul class="actions">
-                    <li><a href="#projects" class="button primary">View Projects</a></li>
-                </ul>
-            </section>
-
-            <section id="skills" class="skills-section">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Core Programming Skills</h2>
-                </div>
-                <ul class="skills-list">
-                    <li>Java</li>
-                    <li>Kotlin</li>
-                    <li>SQL (MySQL/PostgreSQL)</li>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML & CSS</li>
-                </ul>
-            </section>
-
-            <section id="tools" class="skills-section">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Tools & Frameworks</h2>
-                </div>
-                <ul class="tools-list">
-                    <li>Spring Boot</li>
-                    <li>Android Studio</li>
-                    <li>IntelliJ IDEA</li>
-                    <li>Git & GitHub/GitLab & BitBucke</li>
-                    <li>Postman / Swagger</li>
-                    <li>Visual Studio Code</li>
-                    <li>Trello</li>
-                </ul>
-            </section>
-
-            <section id="projects" class="posts">
-                <header class="major">
-                    <h2 class="section-title">Key Projects</h2>
-                </header>
-                <div class="project-list">
-                    
-                    <article class="special fade-in-item">
-                        <header>
-                            <span class="date">Mobile Development | Kotlin, Third-Party SDK</span>
-                            <h2><a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank">Brio | بريو Android Application</a></h2>
-                        </header>
-                        <a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank" class="image fit"><img src="images/pic01.jpg" alt="Brio Android App Screenshot" /></a>
-                        <p>Brio App seamlessly tracks and monitors fitness and health metrics through its smart devices. I developed the native Android application using <b>Kotlin</b> focusing on integrating <b>third-party SDKs</b> for smart device connectivity and real-time data monitoring. The app provides smart insights for a healthier user experience.
+                    <div class="about-content">
+                        <h2 class="section-title" id="about-title">About Me</h2>
+                        <p>
+                            I am a results-driven <strong>Senior Android Developer</strong> with over
+                            <strong>3 years of experience</strong> engineering scalable, high-performance mobile
+                            applications using <strong>Kotlin</strong>, <strong>Jetpack Compose</strong>, and
+                            <strong>MVVM / Clean Architecture</strong>. I also have strong backend expertise with
+                            <strong>Java</strong> and <strong>Spring Boot</strong>.
                         </p>
-                        <ul class="actions special">
-                            <li><a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank" class="button">View on Play Store</a></li>
-                        </ul>
-                    </article>
-                    
-                    <article class="special fade-in-item">
-                        <header>
-                            <span class="date">Mobile Development | Android, Personalized Services</span>
-                            <h2><a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank">Selective Matchmaker - Matrimonial App</a> </h2>
-                        </header>
-                        <a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank" class="image fit"><img src="images/pic03.jpg" alt="Selective Matchmaker App Screenshot" /></a>
-                        <p>Engineered the native Android application for <b>Selective Matchmaker</b>. This matrimonial platform offers personalized services and dedicated matchmakers. I focused on delivering a <b>user-friendly interface (UI/UX)</b> and implementing complex filtering logic to provide precise and high-quality matches.</p>
-                        <ul class="actions special">
-                            <li><a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank" class="button">View on Play Store</a></li>
-                        </ul>
-                    </article>
-
+                        <p style="margin-top: 1rem;">
+                            My work spans <strong>fintech, health-tech, and social platforms</strong> — crafting
+                            seamless UIs, secure API integrations, BLE hardware connectivity, and efficient
+                            state management. I maintain a proven record of reducing crash rates, managing
+                            <strong>CI/CD pipelines</strong>, and delivering clean Play Store releases on schedule.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="button primary" href="#projects" data-scroll>View Projects</a>
+                            <a class="button outline" href="assets/resume/resume.pdf" target="_blank" rel="noopener">📄
+                                Resume PDF</a>
+                        </div>
                     </div>
+                </div>
             </section>
 
-            <section id="resume" class="split contact">
-                <header class="major">
-                    <h2 class="section-title">Professional Resume</h2>
-                </header>
-                <p>View my comprehensive professional background, work experience, and educational qualifications.</p>
-                <ul class="actions">
-                    <li><a href="assets/resume/Abhishek_Tandon_Resume.pdf" class="button primary large">Download Resume (PDF)</a></li>
+            <section id="projects" class="panel reveal panel--wide" aria-labelledby="projects-title">
+                <h2 class="section-title" id="projects-title">Key Projects</h2>
+
+                <div class="projects-list">
+
+                    <article class="project-row" itemscope itemtype="https://schema.org/SoftwareApplication">
+                        <div class="project-visual">
+                            <img src="images/brio.webp"
+                                alt="Brio Fitness App — BLE device integration Android application" loading="lazy"
+                                width="420" height="350" onerror="this.src='https://placehold.co/500x900?text=Brio+App'"
+                                itemprop="screenshot" />
+                        </div>
+                        <div class="project-content">
+                            <span class="meta" itemprop="applicationCategory">Health-Tech · BLE SDK Integration ·
+                                Android</span>
+                            <h3 itemprop="name">Brio — Smart Fitness App</h3>
+                            <p itemprop="description">
+                                A comprehensive fitness platform integrating multiple BLE-enabled smart hardware
+                                devices — skipping ropes, smart scales, and measuring tools — using a custom SDK.
+                                Built with <strong>Kotlin, Jetpack Compose</strong>, and real-time data visualization
+                                charts for dynamic fitness tracking and analytics dashboards.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Architected BLE connection layer to simultaneously manage multiple smart devices
+                                </li>
+                                <li>Implemented real-time data parsing &amp; visualization for live fitness metrics</li>
+                                <li>MVVM Clean Architecture with Coroutines for smooth background processing</li>
+                            </ul>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=sa.com.brio.android" target="_blank"
+                                rel="noopener" aria-label="View Brio App on Google Play Store">
+                                <i class="fab fa-google-play" aria-hidden="true" style="margin-right:6px;"></i>View on
+                                Play Store
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-row reverse" itemscope itemtype="https://schema.org/SoftwareApplication">
+                        <div class="project-visual">
+                            <img src="images/moconnect.webp"
+                                alt="MoConnect Fintech App — Airtime and utility recharge Android application"
+                                loading="lazy" width="420" height="350"
+                                onerror="this.src='https://placehold.co/500x900?text=MoConnect'"
+                                itemprop="screenshot" />
+                        </div>
+                        <div class="project-content">
+                            <span class="meta" itemprop="applicationCategory">Fintech · Airtime &amp; Utility Platform ·
+                                Android</span>
+                            <h3 itemprop="name">MoConnect — SIM, Airtime &amp; More</h3>
+                            <p itemprop="description">
+                                A full-stack Android fintech solution for airtime top-ups, international recharges,
+                                utility payments, and secure wallet-based transactions built with
+                                <strong>Kotlin</strong>
+                                and <strong>MVVM architecture</strong>.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Secure end-to-end API workflows for real-time utility transactions</li>
+                                <li>Wallet-based transaction flows with strict data validation</li>
+                                <li>Retrofit + Coroutines for optimized JSON parsing and data display</li>
+                            </ul>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=za.co.moconnect.android.customer"
+                                target="_blank" rel="noopener" aria-label="View MoConnect App on Google Play Store">
+                                <i class="fab fa-google-play" aria-hidden="true" style="margin-right:6px;"></i>View on
+                                Play Store
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-row" itemscope itemtype="https://schema.org/SoftwareApplication">
+                        <div class="project-visual">
+                            <img src="images/easicall.webp"
+                                alt="EasiApp B2B B2C Telecom Android application — SIM and recharge platform"
+                                loading="lazy" width="420" height="350"
+                                onerror="this.src='https://placehold.co/500x900?text=EasiApp'" itemprop="screenshot" />
+                        </div>
+                        <div class="project-content">
+                            <span class="meta" itemprop="applicationCategory">Telecom · B2B &amp; B2C · Android</span>
+                            <h3 itemprop="name">EasiApp — B2B &amp; B2C Telecom</h3>
+                            <p itemprop="description">
+                                Dual Android applications (Dealer and Customer) serving both B2B and B2C market
+                                segments with <strong>RICA compliance</strong>, SIM purchases, real-time electricity,
+                                fibre, and mobile recharges within a unified platform.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Engineered RICA-compliant SIM card purchasing workflows with secure API
+                                    communication</li>
+                                <li>Integrated multiple third-party REST APIs for real-time utility transactions</li>
+                                <li>Optimized state management reducing booking/purchase drop-offs significantly</li>
+                            </ul>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=za.co.easicall.rica" target="_blank"
+                                rel="noopener" aria-label="View EasiApp on Google Play Store">
+                                <i class="fab fa-google-play" aria-hidden="true" style="margin-right:6px;"></i>View on
+                                Play Store
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-row reverse" itemscope itemtype="https://schema.org/SoftwareApplication">
+                        <div class="project-visual">
+                            <img src="images/matchmaker.webp"
+                                alt="Selective Matchmaker — Native Android matrimony matchmaking application"
+                                loading="lazy" width="420" height="350"
+                                onerror="this.src='https://placehold.co/500x900?text=Matchmaker'"
+                                itemprop="screenshot" />
+                        </div>
+                        <div class="project-content">
+                            <span class="meta" itemprop="applicationCategory">Social · Matrimony Platform ·
+                                Android</span>
+                            <h3 itemprop="name">Selective Matchmaker</h3>
+                            <p itemprop="description">
+                                A high-intent native Android matchmaking platform engineered to handle
+                                high-volume user matchmaking with <strong>Kotlin, MVVM architecture</strong>,
+                                secure authentication, and advanced filtering.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Asynchronous API integration via Retrofit + Coroutines for UI thread efficiency</li>
+                                <li>99.9% API reliability maintained through rigorous data validation</li>
+                                <li>Secure user data handling with Firebase Authentication</li>
+                            </ul>
+                            <a class="button outline"
+                                href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android"
+                                target="_blank" rel="noopener"
+                                aria-label="View Selective Matchmaker on Google Play Store">
+                                <i class="fab fa-google-play" aria-hidden="true" style="margin-right:6px;"></i>View on
+                                Play Store
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="skills" class="panel reveal" aria-labelledby="skills-title">
+                <h2 class="section-title" id="skills-title">Technical Skills</h2>
+
+                <h3 class="skill-category-title">Languages &amp; Frameworks</h3>
+                <ul class="skill-tags" aria-label="Programming languages and frameworks">
+                    <li>
+                        <span class="icon-wrap" data-title="Kotlin" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kotlin.svg" alt=""></span>
+                        Kotlin
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Java" aria-hidden="true"><i class="fab fa-java"
+                                style="color:#5382a1;font-size:20px;" aria-hidden="true"></i></span>
+                        Java
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Jetpack Compose" aria-hidden="true"><i class="fa fa-code"
+                                aria-hidden="true"></i></span>
+                        Jetpack Compose
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="XML" aria-hidden="true"><i class="fa fa-file-code"
+                                aria-hidden="true"></i></span>
+                        XML Layouts
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Android" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/android.svg" alt=""></span>
+                        Android SDK
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Retrofit" aria-hidden="true"><i class="fa fa-plug"
+                                aria-hidden="true"></i></span>
+                        Retrofit
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Room DB" aria-hidden="true"><i class="fa fa-database"
+                                aria-hidden="true"></i></span>
+                        Room DB
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Coroutines" aria-hidden="true"><i class="fa fa-bolt"
+                                aria-hidden="true"></i></span>
+                        Coroutines / Flow
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Spring Boot" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spring.svg" alt=""></span>
+                        Spring Boot
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="SQL" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg" alt=""></span>
+                        SQL
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Flutter" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/flutter.svg" alt=""></span>
+                        Flutter (Basic)
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="HTML5 / CSS3" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" alt=""></span>
+                        HTML &amp; CSS
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="JavaScript" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt=""></span>
+                        JavaScript (Basic)
+                    </li>
+                </ul>
+
+                <h3 class="skill-category-title" style="margin-top: 2rem;">Architecture &amp; Patterns</h3>
+                <ul class="skill-tags" aria-label="Architecture and design patterns">
+                    <li><span class="icon-wrap" data-title="MVVM" aria-hidden="true"><i class="fa fa-layer-group"
+                                aria-hidden="true"></i></span>MVVM</li>
+                    <li><span class="icon-wrap" data-title="Clean Architecture" aria-hidden="true"><i
+                                class="fa fa-sitemap" aria-hidden="true"></i></span>Clean Architecture</li>
+                    <li><span class="icon-wrap" data-title="REST API" aria-hidden="true"><i class="fa fa-exchange-alt"
+                                aria-hidden="true"></i></span>REST APIs</li>
+                    <li><span class="icon-wrap" data-title="JSON" aria-hidden="true"><i class="fa fa-code-branch"
+                                aria-hidden="true"></i></span>JSON Parsing</li>
+                    <li><span class="icon-wrap" data-title="BLE" aria-hidden="true"><i class="fab fa-bluetooth"
+                                aria-hidden="true"></i></span>BLE Integration</li>
+                    <li><span class="icon-wrap" data-title="CI/CD" aria-hidden="true"><i class="fa fa-infinity"
+                                aria-hidden="true"></i></span>CI/CD Pipelines</li>
+                </ul>
+
+                <h3 class="skill-category-title" style="margin-top: 2rem;">Firebase &amp; Cloud</h3>
+                <ul class="skill-tags" aria-label="Firebase and cloud services">
+                    <li>
+                        <span class="icon-wrap" data-title="Firebase" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/firebase.svg" alt=""></span>
+                        Firebase Auth
+                    </li>
+                    <li><span class="icon-wrap" data-title="Firestore" aria-hidden="true"><i class="fa fa-cloud"
+                                aria-hidden="true"></i></span>Firestore</li>
+                    <li><span class="icon-wrap" data-title="Realtime DB" aria-hidden="true"><i class="fa fa-database"
+                                aria-hidden="true"></i></span>Realtime Database</li>
+                    <li><span class="icon-wrap" data-title="FCM" aria-hidden="true"><i class="fa fa-bell"
+                                aria-hidden="true"></i></span>FCM Push Notifications</li>
+                    <li><span class="icon-wrap" data-title="Crashlytics" aria-hidden="true"><i class="fa fa-bug"
+                                aria-hidden="true"></i></span>Crashlytics</li>
+                </ul>
+
+                <h3 class="skill-category-title" style="margin-top: 2rem;">Tools &amp; Platforms</h3>
+                <ul class="skill-tags" aria-label="Development tools and platforms">
+                    <li>
+                        <span class="icon-wrap" data-title="Android Studio" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/androidstudio.svg"
+                                alt=""></span>
+                        Android Studio
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Git" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" alt=""></span>
+                        Git
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="GitHub" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt=""></span>
+                        GitHub
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="GitLab" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gitlab.svg" alt=""></span>
+                        GitLab
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Bitbucket" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/bitbucket.svg" alt=""></span>
+                        Bitbucket
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Postman" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postman.svg" alt=""></span>
+                        Postman
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Swagger" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/swagger.svg" alt=""></span>
+                        Swagger
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Google Play Console" aria-hidden="true"><img
+                                class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googleplay.svg" alt=""></span>
+                        Play Console
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="MySQL Workbench" aria-hidden="true"><img class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg" alt=""></span>
+                        MySQL Workbench
+                    </li>
+                    <li>
+                        <span class="icon-wrap" data-title="Azure Data Studio" aria-hidden="true"><img
+                                class="inline-icon"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftazure.svg"
+                                alt=""></span>
+                        Azure Data Studio
+                    </li>
                 </ul>
             </section>
 
-            <section id="contact" class="split contact">
-                <header class="major">
-                    <h2 class="section-title">Get In Touch</h2>
-                </header>
+            <section id="experience" class="panel reveal" aria-labelledby="experience-title">
+                <h2 class="section-title" id="experience-title">Professional Experience</h2>
 
-                <div class="contact-details">
-                    <section class="contact-info">
-                        <h3>Location</h3>
-                        <p>Noida Sector-58, Uttar Pradesh, India</p>
-                    </section>
+                <div class="experience-timeline">
+                    <div class="experience-item" itemscope itemtype="https://schema.org/OrganizationRole">
+                        <div class="experience-marker" aria-hidden="true">
+                            <span class="experience-dot"></span>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <span class="experience-duration" itemprop="startDate" content="2024-10">Oct 2024 –
+                                    Present</span>
+                                <h3 itemprop="roleName">Android Developer</h3>
+                                <span class="experience-company" itemprop="name">Vidursoft — Ghaziabad, India</span>
+                            </div>
+                            <p>
+                                Leading Android development for fintech and health-tech products with a strong focus
+                                on <strong>Kotlin</strong>, <strong>Jetpack Compose</strong>, BLE hardware SDK
+                                integration,
+                                and scalable clean architecture. Managing full Play Store release lifecycle.
+                            </p>
+                            <ul>
+                                <li>Developed and deployed Android apps with Kotlin, Jetpack Compose &amp; MVVM,
+                                    optimizing UI rendering</li>
+                                <li>Integrated RESTful APIs via <strong>Retrofit</strong> with Firebase Auth &amp;
+                                    Firestore for real-time data processing</li>
+                                <li>Integrated multiple BLE-enabled fitness devices (scales, ropes, sensors) with custom
+                                    hardware SDK</li>
+                                <li>Improved real-time device sync reliability and significantly decreased crash
+                                    incidents across devices</li>
+                                <li>Executed comprehensive <strong>Google Play Store releases</strong> with CI/CD
+                                    pipeline management</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                        <section class="contact-info">
-                            <h3>Phone</h3>
-                            <p><a href="tel:+919782205815" class="contact-link">+91-9782205815</a></p>
-                        </section>
+                    <div class="experience-item" itemscope itemtype="https://schema.org/OrganizationRole">
+                        <div class="experience-marker" aria-hidden="true">
+                            <span class="experience-dot"></span>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <span class="experience-duration" itemprop="startDate" content="2023-03">Mar 2023 – Sep
+                                    2024</span>
+                                <h3 itemprop="roleName">Java / Android Developer</h3>
+                                <span class="experience-company" itemprop="name">Monoprabal Engineering — Bhopal,
+                                    India</span>
+                            </div>
+                            <p>
+                                Contributed to enterprise-level Android applications and backend systems using
+                                <strong>Kotlin</strong>, <strong>Java</strong>, and <strong>Spring Boot</strong>,
+                                focusing on performance optimization and maintainable MVVM architecture.
+                            </p>
+                            <ul>
+                                <li>Developed and maintained enterprise Android apps with Kotlin &amp; Java under strict
+                                    <strong>MVVM</strong> standards
+                                </li>
+                                <li>Designed responsive UI screens, complex navigation flows, and reusable components
+                                    improving user retention</li>
+                                <li>Integrated Firebase Realtime Database &amp; <strong>FCM</strong> for real-time sync
+                                    and targeted push notifications</li>
+                                <li>Built and maintained REST APIs using <strong>Spring Boot</strong>; optimized JSON
+                                    parsing for faster data retrieval</li>
+                                <li>Worked with SQL databases, MySQL Workbench, and Azure Data Studio for backend
+                                    integrations</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                        <section class="contact-info">
-                            <h3>Email</h3>
-                            <p><a href="mailto:tandonabhishek245@gmail.com" class="contact-link">tandonabhishek245@gmail.com</a></p>
-                        </section>
+                </div>
 
-                    <section class="social-media">
-                        <h3>Online Presence</h3>
-                        <ul class="icons alt">
-                            <li><a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/" target="_blank"
-                                        class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                            <li><a href="https://github.com/Tandon245/" class="icon brands alt fa-github"><span
-                                            class="label">GitHub</span></a></li>
-                        </ul>
-                    </section>
+                <div class="experience-cta">
+                    <a class="button primary" href="assets/resume/resume.pdf" target="_blank" rel="noopener"
+                        aria-label="Download Abhishek Tandon Resume as PDF">
+                        📄 Download Resume (PDF)
+                    </a>
                 </div>
             </section>
 
-                <section id="screenshots" class="screenshots">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Project Gallery</h2>
-                </div>
-                <div class="screenshot-gallery">
-                    <a href="https://play.google.com/store/apps/details?id=sa.com.brio.android&hl=en_IN" target="_blank">
-                        <img src="images/pic02.jpg" alt="Brio App Screenshot" />
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.selectivematchmaker.android&hl=en_IN" target="_blank">
-                        <img src="images/pic03.jpg" alt="Selective Matchmaker Screenshot" />
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="images/pic04.jpg" alt="Project Screenshot Placeholder" />
-                    </a>
+            <section id="education" class="panel reveal" aria-labelledby="education-title">
+                <h2 class="section-title" id="education-title">Education</h2>
+
+                <div class="education-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+                    <div class="education-icon" aria-hidden="true">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <span class="education-duration">2017 – 2021</span>
+                            <h3 itemprop="name">Bachelor of Technology (B.Tech)</h3>
+                            <span class="education-institution" itemprop="recognizedBy">
+                                Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal
+                            </span>
+                        </div>
+                        <div class="education-meta">
+                            <span class="education-badge">
+                                <i class="fa fa-star" aria-hidden="true" style="margin-right:4px; color:#f0c040;"></i>
+                                CGPA: 7.24
+                            </span>
+                            <span class="education-badge">
+                                <i class="fa fa-map-marker-alt" aria-hidden="true"
+                                    style="margin-right:4px; color:#3498db;"></i>
+                                Bhopal, Madhya Pradesh, India
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-        </div>
+            <section id="contact" class="panel reveal" aria-labelledby="contact-title">
+                <h2 class="section-title" id="contact-title">Get In Touch</h2>
 
-        <footer id="footer">
-            <ul class="footer-top">
-                <li>&copy; 2025 Abhishek Tandon. All rights reserved.</li>
-                <li>Template: <a href="https://html5up.net">HTML5 UP</a></li>
-            </ul>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4><i class="fa fa-map-marker-alt" aria-hidden="true"
+                                    style="margin-right:6px; color:#3498db;"></i>Location</h4>
+                            <p>Noida, Uttar Pradesh — 201016, India</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4><i class="fa fa-phone" aria-hidden="true"
+                                    style="margin-right:6px; color:#3498db;"></i>Phone</h4>
+                            <p><a href="tel:+919782205815" aria-label="Call Abhishek Tandon">+91-9782205815</a></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4><i class="fa fa-envelope" aria-hidden="true"
+                                    style="margin-right:6px; color:#3498db;"></i>Email</h4>
+                            <p><a href="mailto:tandonabhishek245@gmail.com"
+                                    aria-label="Email Abhishek Tandon">tandonabhishek245@gmail.com</a></p>
+                        </div>
+
+                        <div class="social-row">
+                            <h4>Online Presence</h4>
+                            <ul class="social-list" aria-label="Social media and professional profiles">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/er-abhishek-tandon-3120a1220/" target="_blank"
+                                        rel="noopener" class="social" aria-label="Abhishek Tandon on LinkedIn">
+                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/Tandon245" target="_blank" rel="noopener" class="social"
+                                        aria-label="Abhishek Tandon on GitHub">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://wa.me/919782205815?text=Hi%20Abhishek!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20opportunity."
+                                        target="_blank" rel="noopener" class="social"
+                                        aria-label="Chat with Abhishek Tandon on WhatsApp">
+                                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.hackerrank.com/profile/tandonabhishek21" target="_blank"
+                                        rel="noopener" class="social" aria-label="Abhishek Tandon on HackerRank">
+                                        <i class="fab fa-hackerrank" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://leetcode.com/u/AbhiTandon2617/" target="_blank" rel="noopener"
+                                        class="social" aria-label="Abhishek Tandon on LeetCode">
+                                        <i class="fa fa-code" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h3>Send me a message</h3>
+
+                        <form id="contact-form" action="https://formsubmit.co/tandonabhishek245@gmail.com" method="POST"
+                            novalidate>
+                            <input type="hidden" name="_subject" value="Portfolio Enquiry — Abhishek Tandon">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://tandon245.github.io/">
+                            <input type="hidden" name="_template" value="table">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name <span aria-hidden="true"
+                                        style="color:#e05;">*</span></label>
+                                <input type="text" id="name" name="name" class="form-control" required
+                                    placeholder="John Doe" autocomplete="name" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address <span aria-hidden="true"
+                                        style="color:#e05;">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" required
+                                    placeholder="john@example.com" autocomplete="email" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mobile" class="form-label">Mobile Number <span aria-hidden="true"
+                                        style="color:#e05;">*</span></label>
+                                <input type="tel" id="mobile" name="mobile" class="form-control" required
+                                    placeholder="+91 1234567890" autocomplete="tel" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Requirement / Message <span aria-hidden="true"
+                                        style="color:#e05;">*</span></label>
+                                <textarea id="message" name="message" class="form-control" rows="5" required
+                                    placeholder="How can I help you?"></textarea>
+                            </div>
+
+                            <button type="submit" class="button primary" aria-label="Send message to Abhishek Tandon">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer id="site-footer" role="contentinfo">
+            <small>
+                &copy; 2025 Abhishek Tandon — Senior Android Developer, Noida, India.
+                Built with passion for clean code.
+            </small>
         </footer>
+
     </div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

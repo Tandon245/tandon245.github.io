@@ -1,174 +1,266 @@
-/*
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+(function () {
+  "use strict";
 
-(function($) {
+  var header = document.getElementById("site-header");
+  var hero = document.getElementById("hero");
+  var navList = document.querySelector(".nav-list");
+  var navToggle = document.getElementById("navToggle");
+  var navLinks = document.querySelectorAll('.nav-list a[data-scroll]');
+  var reveals = document.querySelectorAll(".reveal");
+  var mainEl = document.querySelector("main#main");
 
-	var	$window = $(window),
-		$body = $('body'),
-		$wrapper = $('#wrapper'),
-		$header = $('#header'),
-		$nav = $('#nav'),
-		$main = $('#main'),
-		$navPanelToggle, $navPanel, $navPanelInner;
+  function updateHeaderOnScroll() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    if (hero && scrollY > hero.offsetTop + hero.offsetHeight * 0.65) {
+      header.classList.remove("header--transparent");
+      header.classList.add("header--solid");
+    } else {
+      header.classList.add("header--transparent");
+      header.classList.remove("header--solid");
+    }
+  }
 
-	// Breakpoints.
-		breakpoints({
-			default:   ['1681px',   null       ],
-			xlarge:    ['1281px',   '1680px'   ],
-			large:     ['981px',    '1280px'   ],
-			medium:    ['737px',    '980px'    ],
-			small:     ['481px',    '736px'    ],
-			xsmall:    ['361px',    '480px'    ],
-			xxsmall:   [null,       '360px'    ]
-		});
+  function smoothScrollHandler(e) {
+    var href = this.getAttribute("href");
+    if (!href || href.indexOf("#") !== 0) return;
 
-	// Parallax behavior removed for performance and simplicity.
+    var target = document.querySelector(href);
+    if (!target) return;
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+    e.preventDefault();
+    var headerHeight = header.offsetHeight || 64;
+    var top =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight -
+      12;
 
-	// Scrolly.
-		$('.scrolly').scrolly();
+    window.scrollTo({ top: top, behavior: "smooth" });
 
-	// Background parallax removed; keep wrapper as-is.
+    if (navList.classList.contains("open")) {
+      navList.classList.remove("open");
+    }
+  }
 
-	// Nav Panel.
+  if (navToggle) {
+    navToggle.addEventListener("click", function () {
+      navList.classList.toggle("open");
+    });
+  }
 
-		// Toggle.
-			$navPanelToggle = $(
-				'<a href="#navPanel" id="navPanelToggle">Menu</a>'
-			)
-				.appendTo($wrapper);
+  navLinks.forEach(function (a) {
+    a.addEventListener("click", smoothScrollHandler);
+  });
 
-			// Change toggle styling once we've scrolled past the header.
-				$header.scrollex({
-					bottom: '5vh',
-					enter: function() {
-						$navPanelToggle.removeClass('alt');
-					},
-					leave: function() {
-						$navPanelToggle.addClass('alt');
-					}
-				});
+  function initReveal() {
+    if ("IntersectionObserver" in window) {
+      var obs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+      );
 
-		// Panel.
-			$navPanel = $(
-				'<div id="navPanel">' +
-					'<nav>' +
-					'</nav>' +
-					'<a href="#navPanel" class="close"></a>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-navPanel-visible'
-				});
+      reveals.forEach(function (el) {
+        obs.observe(el);
+      });
+    }
+  }
 
-			// Get inner.
-				$navPanelInner = $navPanel.children('nav');
+  function updateActiveNav() {
+    var fromTop =
+      window.scrollY + (header.offsetHeight || 70) + 20;
 
-			// Move nav content on breakpoint change.
-				var $navContent = $nav.children();
+    var navItems = document.querySelectorAll(".nav-list .nav-item");
+    var found = false;
 
-				breakpoints.on('>medium', function() {
+    document.querySelectorAll("main section[id]").forEach(function (section) {
+      var top = section.offsetTop;
+      var bottom = top + section.offsetHeight;
 
-					// NavPanel -> Nav.
-						$navContent.appendTo($nav);
+      if (fromTop >= top && fromTop < bottom) {
+        var id = section.getAttribute("id");
 
-					// Flip icon classes.
-						$nav.find('.icons, .icon')
-							.removeClass('alt');
+        navItems.forEach(function (li) {
+          li.classList.remove("active");
+        });
 
-				});
+        var link = document.querySelector(
+          '.nav-list a[href="#' + id + '"]'
+        );
 
-				breakpoints.on('<=medium', function() {
+        if (link) {
+          link.parentElement.classList.add("active");
+          found = true;
+        }
+      }
+    });
 
-					// Nav -> NavPanel.
-						$navContent.appendTo($navPanelInner);
+    if (!found && hero && window.scrollY < hero.offsetHeight * 0.6) {
+      navItems.forEach(function (li) {
+        li.classList.remove("active");
+      });
 
-					// Flip icon classes.
-						$navPanelInner.find('.icons, .icon')
-							.addClass('alt');
+      var home = document.querySelector('.nav-list a[href="#hero"]');
+      if (home) home.parentElement.classList.add("active");
+    }
+  }
+  function throttle(fn, wait) {
+    var last = 0;
+    return function () {
+      var now = Date.now();
+      if (now - last >= wait) {
+        last = now;
+        fn.apply(this, arguments);
+      }
+    };
+  }
 
-				});
+  function initHeroIntro() {
+    setTimeout(function () {
+      document
+        .querySelectorAll(".hero-inner, .hero-cta")
+        .forEach(function (el) {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        });
+    }, 120);
+  }
 
-			// Hack: Disable transitions on WP.
-				if (browser.os == 'wp'
-				&&	browser.osVersion < 10)
-					$navPanel
-						.css('transition', 'none');
+  var heroEl = document.querySelector(".hero");
+  if (heroEl) {
+    heroEl.addEventListener("mousemove", function (e) {
+      var x = (e.clientX / window.innerWidth - 0.5) * 10;
+      var y = (e.clientY / window.innerHeight - 0.5) * 10;
+      heroEl.style.backgroundPosition =
+        50 + x + "% " + (50 + y) + "%";
+    });
+  }
 
-	// Intro.
-		var $intro = $('#intro');
+  var revealed = false;
 
-		if ($intro.length > 0) {
+  window.addEventListener("scroll", function () {
+    document.body.classList.toggle("scrolled", window.scrollY > 20);
 
-			// Hack: Fix flex min-height on IE.
-				if (browser.name == 'ie') {
-					$window.on('resize.ie-intro-fix', function() {
+    var triggerPoint = window.innerHeight * 0.2;
+    if (!revealed && window.scrollY > triggerPoint) {
+      revealed = true;
+      mainEl.style.transform = "translateY(0)";
+    }
+  });
+  function init() {
+    updateHeaderOnScroll();
+    updateActiveNav();
+    initReveal();
+    initHeroIntro();
 
-						var h = $intro.height();
+    window.addEventListener(
+      "scroll",
+      throttle(function () {
+        updateHeaderOnScroll();
+        updateActiveNav();
+      }, 120)
+    );
 
-						if (h > $window.height())
-							$intro.css('height', 'auto');
-						else
-							$intro.css('height', h);
+    window.addEventListener(
+      "resize",
+      throttle(updateHeaderOnScroll, 180)
+    );
+  }
 
-					}).trigger('resize.ie-intro-fix');
-				}
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+const contactForm = document.getElementById("contact-form");
 
-			// Hide intro on scroll (> small).
-				breakpoints.on('>small', function() {
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-					$main.unscrollex();
+    const formData = new FormData(contactForm);
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
 
-					$main.scrollex({
-						mode: 'bottom',
-						top: '25vh',
-						bottom: '-50vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
-					});
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
 
-				});
+    fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" }
+    })
+      .then(res => {
+        if (res.ok) {
+          alert("Thank you! Your message has been sent.");
+          contactForm.reset();
+        } else {
+          alert("Submission failed. Please try again.");
+        }
+      })
+      .catch(() => alert("Network error."))
+      .finally(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      });
+  });
+}
 
-			// Hide intro on scroll (<= small).
-				breakpoints.on('<=small', function() {
+const heroSub = document.querySelector(".hero-sub");
+if (heroSub) {
+  const text = heroSub.textContent.trim();
+  heroSub.textContent = "";
+  let i = 0;
 
-					$main.unscrollex();
+  const typing = setInterval(() => {
+    heroSub.textContent += text[i++];
+    if (i >= text.length) clearInterval(typing);
+  }, 60);
+}
 
-					$main.scrollex({
-						mode: 'middle',
-						top: '15vh',
-						bottom: '-15vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
-					});
+(function () {
+  const THEME_KEY = "theme";
+  const themeToggle = document.getElementById("themeToggle");
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
 
-			});
+  function applyTheme(theme) {
+    document.body.classList.remove("theme-dark", "theme-light");
+    document.body.classList.add(theme === "dark" ? "theme-dark" : "theme-light");
 
-		}
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", theme === "dark");
+      const icon = themeToggle.querySelector("i");
+      icon.className = theme === "dark" ? "fa fa-moon" : "fa fa-sun";
+      themeToggle.classList.toggle("active", theme === "dark");
+    }
+  }
 
-})(jQuery);
+  function initTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    const theme = saved || (mq.matches ? "dark" : "light");
+    applyTheme(theme);
+
+    mq.addEventListener("change", e => {
+      if (!saved) applyTheme(e.matches ? "dark" : "light");
+    });
+
+    themeToggle?.addEventListener("click", () => {
+      const next = document.body.classList.contains("theme-dark")
+        ? "light"
+        : "dark";
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+    });
+  }
+
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", initTheme)
+    : initTheme();
+})();
